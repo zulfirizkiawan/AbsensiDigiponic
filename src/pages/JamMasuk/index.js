@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {ScrollView, StyleSheet, Text, View} from 'react-native';
 import {
   Buttons,
   Gap,
@@ -12,17 +12,19 @@ import {
 const JamMasuk = ({navigation}) => {
   return (
     <View style={styles.page}>
-      <Header onPress={() => navigation.goBack()} />
-      <Gap height={20} />
-      <View style={styles.content}>
-        <View>
-          <UploadGambar style={styles.UG} />
-          <Gap height={30} />
-          <JamTgl />
-          <Gap height={20} />
-          <Input judul="Lokasi" />
+      <Header onPress={() => alert('wdd')} />
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <Gap height={20} />
+        <View style={styles.content}>
+          <View>
+            <UploadGambar style={styles.UG} />
+            <Gap height={30} />
+            <JamTgl />
+            <Gap height={20} />
+            <Input judul="Lokasi" />
+          </View>
         </View>
-      </View>
+      </ScrollView>
       <View>
         <Buttons title="Absen Masuk" />
       </View>

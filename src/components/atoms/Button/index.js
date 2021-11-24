@@ -1,5 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {fonts} from '../../../utils';
 import IconOnly from './IconOnly';
 
 const Button = ({type, title, onPress}) => {
@@ -36,7 +37,7 @@ const styles = StyleSheet.create({
   TxtLogin: {
     color: 'white',
     fontSize: 18,
-    fontWeight: '700',
+    fontFamily: fonts.primary[700],
     textAlign: 'center',
   },
 });

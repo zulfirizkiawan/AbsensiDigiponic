@@ -1,5 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text, TextInput, View} from 'react-native';
+import {fonts} from '../../../utils';
 
 const Input = ({judul}) => {
   return (
@@ -17,17 +18,17 @@ const styles = StyleSheet.create({
   Tjudul: {
     color: '#858585',
     fontSize: 14,
-    fontWeight: '500',
+    fontFamily: fonts.primary[500],
   },
   TI: {
     marginTop: -8,
     fontSize: 16,
     color: '#070821',
-    fontWeight: '400',
+    fontFamily: fonts.primary[400],
   },
   garis: {
     borderBottomColor: '#BDBDBD',
-    borderBottomWidth: 1,
+    borderBottomWidth: 0.7,
     marginTop: -5,
   },
 });

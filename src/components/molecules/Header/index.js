@@ -1,13 +1,13 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {Buttons, Gap} from '../..';
-import {ICBack} from '../../../assets';
+import {fonts} from '../../../utils';
 
-const Header = ({onPress}) => {
+const Header = ({onPress, title}) => {
   return (
     <View style={styles.container}>
       <Buttons type="icon-only" onPress={onPress} />
-      <Text style={styles.TxtHeader}>Jam Masuk</Text>
+      <Text style={styles.TxtHeader}>{title}</Text>
       <Gap width={23} />
     </View>
   );
@@ -32,6 +32,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 20,
     color: '#333333',
-    fontWeight: '700',
+    fontFamily: fonts.primary[700],
   },
 });

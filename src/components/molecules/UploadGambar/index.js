@@ -1,6 +1,7 @@
 import React from 'react';
 import {Image, StyleSheet, Text, View} from 'react-native';
 import {ICUpload} from '../../../assets';
+import {fonts} from '../../../utils';
 
 const UploadGambar = () => {
   return (
@@ -26,7 +27,7 @@ const styles = StyleSheet.create({
     marginTop: 15,
   },
   label: {
-    fontWeight: '500',
+    fontFamily: fonts.primary[500],
     fontSize: 14,
     color: 'black',
     letterSpacing: 0.5,

@@ -1,6 +1,7 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {Gap} from '../..';
+import {fonts} from '../../../utils';
 
 const JamTgl = () => {
   return (
@@ -34,7 +35,7 @@ const styles = StyleSheet.create({
   jamTgl: {
     color: 'white',
     fontSize: 16,
-    fontWeight: '400',
+    fontFamily: fonts.primary[400],
     textAlign: 'center',
   },
   strip: {
@@ -50,7 +51,7 @@ const styles = StyleSheet.create({
   },
   Jam: {
     fontSize: 30,
-    fontWeight: '700',
+    fontFamily: fonts.primary[700],
     color: 'white',
   },
 });

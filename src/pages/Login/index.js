@@ -1,11 +1,19 @@
 import React from 'react';
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {
+  StatusBar,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import {ILLOGO, ILTangan} from '../../assets';
 import {Gap, Input} from '../../components';
+import {fonts} from '../../utils';
 
 const Login = ({navigation}) => {
   return (
     <View style={styles.page}>
+      <StatusBar barStyle="dark-content" backgroundColor="#FFF" />
       <ILLOGO style={styles.logo} />
       <View style={styles.WrapSelamat}>
         <Text style={styles.TxtSelamat}>Selamat Datang</Text>
@@ -20,7 +28,7 @@ const Login = ({navigation}) => {
       <Gap height={40} />
       <TouchableOpacity
         style={styles.BtnLogin}
-        onPress={() => navigation.navigate('JamMasuk')}>
+        onPress={() => navigation.replace('MainApp')}>
         <Text style={styles.TxtLogin}>LOGIN</Text>
       </TouchableOpacity>
     </View>
@@ -47,7 +55,7 @@ const styles = StyleSheet.create({
   },
   TxtSelamat: {
     fontSize: 24,
-    fontWeight: '700',
+    fontFamily: fonts.primary[700],
     color: '#334639',
     paddingRight: 10,
   },
@@ -55,7 +63,7 @@ const styles = StyleSheet.create({
     fontSize: 12,
     color: '#106048',
     textDecorationLine: 'underline',
-    fontWeight: '500',
+    fontFamily: fonts.primary[500],
     alignSelf: 'flex-end',
   },
   BtnLogin: {
@@ -66,7 +74,7 @@ const styles = StyleSheet.create({
   TxtLogin: {
     color: 'white',
     fontSize: 18,
-    fontWeight: '800',
+    fontFamily: fonts.primary[800],
     textAlign: 'center',
   },
 });

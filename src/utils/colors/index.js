@@ -12,7 +12,7 @@ export const colors = {
   black: 'black',
   text: {
     primary: mainColors.greyblack,
-    secondary: mainColors.grey2,
+    secondary: mainColors.green,
     MenuinActive: mainColors.grey,
     MenuActive: mainColors.green,
   },

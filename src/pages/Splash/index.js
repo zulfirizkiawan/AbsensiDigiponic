@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, StatusBar} from 'react-native';
 import {ILLOGO} from '../../assets';
+import {fonts} from '../../utils';
 
 const Splash = ({navigation}) => {
   useEffect(() => {
@@ -11,6 +12,7 @@ const Splash = ({navigation}) => {
 
   return (
     <View style={styles.page}>
+      <StatusBar barStyle="dark-content" backgroundColor="#FFF" />
       <ILLOGO />
       <Text style={styles.text}>PT. Maju Bersama</Text>
     </View>
@@ -21,7 +23,7 @@ export default Splash;
 const styles = StyleSheet.create({
   text: {
     fontSize: 24,
-    fontWeight: '900',
+    fontFamily: fonts.primary[900],
     color: '#334639',
     marginTop: 5,
   },
