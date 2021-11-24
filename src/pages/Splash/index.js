@@ -1,8 +1,14 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import {ILLOGO} from '../../assets';
 
-const Splash = () => {
+const Splash = ({navigation}) => {
+  useEffect(() => {
+    setTimeout(() => {
+      navigation.replace('Login');
+    }, 3000);
+  }, []);
+
   return (
     <View style={styles.page}>
       <ILLOGO />
