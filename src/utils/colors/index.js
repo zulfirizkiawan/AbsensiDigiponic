@@ -3,6 +3,7 @@ const mainColors = {
   green: '#0D9C57',
   grey: '#D5D5D5',
   grey2: '#858585',
+  borderGrey: '#E5E5E5',
 };
 
 export const colors = {
@@ -22,6 +23,6 @@ export const colors = {
       text: 'white',
     },
   },
-  border: mainColors.gray2,
+  border: mainColors.borderGrey,
   cardLight: mainColors.green2,
 };

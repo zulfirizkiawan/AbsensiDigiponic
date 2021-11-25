@@ -1,5 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {Gap} from '../..';
 import {ILCuti, ILKehadiran, ILResign} from '../../../assets';
 import {colors, fonts} from '../../../utils';
 
@@ -17,12 +18,10 @@ const Layanan = ({category, onPress}) => {
     return <ILKehadiran />;
   };
   return (
-    <View>
-      <TouchableOpacity style={styles.wrapLayanan} onPress={onPress}>
-        <Icon />
-        <Text style={styles.lblLayanan}>{category}</Text>
-      </TouchableOpacity>
-    </View>
+    <TouchableOpacity style={styles.wrapLayanan} onPress={onPress}>
+      <Icon />
+      <Text style={styles.lblLayanan}>{category}</Text>
+    </TouchableOpacity>
   );
 };
 

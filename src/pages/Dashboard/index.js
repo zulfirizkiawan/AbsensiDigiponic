@@ -1,34 +1,74 @@
 import React from 'react';
-import {Image, StatusBar, StyleSheet, Text, View} from 'react-native';
+import {
+  Image,
+  ScrollView,
+  StatusBar,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
 import {DummyProfil} from '../../assets';
-import {Gap, Layanan, Pengumuman} from '../../components';
+import {Artikel, Gap, Layanan, Pengumuman, Penilaian} from '../../components';
 import {colors, fonts} from '../../utils';
 
 const Dashboard = ({navigation}) => {
   return (
     <View style={styles.page}>
       <StatusBar barStyle="dark-content" backgroundColor="#FFF" />
-      <Gap height={40} />
-      <View style={styles.wrapProfile}>
-        <Image source={DummyProfil} style={styles.avatar} />
-        <View>
-          <Text style={styles.nama}>Lutfy Uzumaki</Text>
-          <Text style={styles.profesi}>Staff Quality</Text>
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <Gap height={40} />
+        {/* Profile */}
+        <View style={styles.wrapProfile}>
+          <Image source={DummyProfil} style={styles.avatar} />
+          <View>
+            <Text style={styles.nama}>Lutfy Uzumaki</Text>
+            <Text style={styles.profesi}>Staff Quality</Text>
+          </View>
         </View>
-      </View>
-      <Gap height={40} />
-      <Pengumuman />
-      <Gap height={40} />
-      <Text style={styles.TxtLabel}>Layanan</Text>
-      <Gap height={20} />
-      <View style={styles.wrapLayanan}>
-        <Layanan category="Kehadiran" onPress={() => alert('Hallo')} />
-        <Layanan category="Cuti" onPress={() => alert('Hallo')} />
-        <Layanan category="  Resign  " onPress={() => alert('Hallo')} />
-      </View>
-      <Gap height={40} />
-      <Text style={styles.TxtLabel}>Penilaian Kinerja</Text>
-      <Gap height={15} />
+        <Gap height={40} />
+        {/* Pengumuman */}
+        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+          <View style={styles.wrapPengumuman}>
+            <Pengumuman />
+            <Pengumuman />
+          </View>
+          <Gap width={10} />
+        </ScrollView>
+        {/* Layanan */}
+        <View style={styles.wrapContentLayanan}>
+          <Gap height={40} />
+          <Text style={styles.TxtLabel}>Layanan</Text>
+          <Gap height={20} />
+          <View style={styles.wrapLayanan}>
+            <Layanan category="Kehadiran" onPress={() => alert('Hallo')} />
+            <Layanan category="Cuti" onPress={() => alert('Hallo')} />
+            <Layanan category="  Resign  " onPress={() => alert('Hallo')} />
+          </View>
+        </View>
+        <Gap height={40} />
+        {/* Penilaian */}
+        <View style={styles.wrapContentLayanan}>
+          <Text style={styles.TxtLabel}>Penilaian Kinerja Anda</Text>
+          <Gap height={15} />
+          <View style={styles.wrapPenilaian}>
+            <Penilaian />
+            <Penilaian />
+            <Penilaian />
+            <Penilaian />
+            <Penilaian />
+            <Penilaian />
+          </View>
+        </View>
+        <Gap height={40} />
+        {/* Artikel */}
+        <View style={styles.wrapContentLayanan}>
+          <Text style={styles.TxtLabel}>Artikel</Text>
+          <Gap height={5} />
+          <Artikel />
+          <Artikel />
+        </View>
+        <Gap height={20} />
+      </ScrollView>
     </View>
   );
 };
@@ -37,7 +77,6 @@ export default Dashboard;
 
 const styles = StyleSheet.create({
   page: {
-    paddingHorizontal: 10,
     backgroundColor: colors.white,
     flex: 1,
   },
@@ -50,6 +89,7 @@ const styles = StyleSheet.create({
   wrapProfile: {
     flexDirection: 'row',
     alignItems: 'center',
+    paddingHorizontal: 10,
   },
   nama: {
     fontFamily: fonts.primary[700],
@@ -71,5 +111,24 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     paddingHorizontal: 30,
+  },
+  wrapPengumuman: {
+    flexDirection: 'row',
+    height: 180,
+    alignItems: 'center',
+  },
+  wrapContentLayanan: {
+    paddingHorizontal: 10,
+  },
+  wrapPenilaian: {
+    shadowColor: '#858585',
+    shadowOpacity: 0.26,
+    shadowOffset: {width: 3, height: 2},
+    shadowRadius: 10,
+    elevation: 5,
+    backgroundColor: 'white',
+    borderRadius: 10,
+    paddingHorizontal: 20,
+    paddingVertical: 10,
   },
 });

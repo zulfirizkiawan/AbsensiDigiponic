@@ -6,6 +6,10 @@ import ICDashboard from './ICDashboard.svg';
 import ICDashboardAktif from './ICDashboardAktif.svg';
 import ICRiwayat from './ICRiwayat.svg';
 import ICRiwayatAktif from './ICRiwayatAktif.svg';
+import ICEmail from './Email.svg';
+import ICKeluar from './Keluar.svg';
+import ICPusatbantuan from './Pusatbantuan.svg';
+import ICArrowRight from './ArrowRight.svg';
 
 export {
   ICBack,
@@ -16,4 +20,8 @@ export {
   ICRiwayatAktif,
   ICDashboard,
   ICDashboardAktif,
+  ICEmail,
+  ICKeluar,
+  ICPusatbantuan,
+  ICArrowRight,
 };
