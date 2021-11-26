@@ -12,15 +12,15 @@ const EditProfile = ({navigation}) => {
         <View style={styles.wrapContent}>
           <Image source={DummyProfile} style={styles.avatar} />
           <Input judul="Nama Lengkap" />
-          <Gap height={10} />
+          <Gap height={15} />
           <Input judul="Alamat" />
-          <Gap height={10} />
+          <Gap height={15} />
           <Input judul="Tanggal Lahir" />
-          <Gap height={10} />
+          <Gap height={15} />
           <Input judul="No. Telepon" />
-          <Gap height={10} />
+          <Gap height={15} />
           <Input judul="Email" />
-          <Gap height={10} />
+          <Gap height={15} />
           <Input judul="Posisi" />
           <Gap height={20} />
         </View>

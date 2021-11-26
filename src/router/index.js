@@ -2,10 +2,13 @@ import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {
   Akun,
+  Cuti,
   Dashboard,
   EditProfile,
   JamMasuk,
+  Kehadiran,
   Login,
+  Resign,
   Riwayat,
   Splash,
 } from '../pages';
@@ -58,6 +61,21 @@ const Router = () => {
       <Stack.Screen
         name="EditProfile"
         component={EditProfile}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Resign"
+        component={Resign}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Cuti"
+        component={Cuti}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Kehadiran"
+        component={Kehadiran}
         options={{headerShown: false}}
       />
       <Stack.Screen

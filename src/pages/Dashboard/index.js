@@ -40,9 +40,18 @@ const Dashboard = ({navigation}) => {
           <Text style={styles.TxtLabel}>Layanan</Text>
           <Gap height={20} />
           <View style={styles.wrapLayanan}>
-            <Layanan category="Kehadiran" onPress={() => alert('Hallo')} />
-            <Layanan category="Cuti" onPress={() => alert('Hallo')} />
-            <Layanan category="  Resign  " onPress={() => alert('Hallo')} />
+            <Layanan
+              category="Kehadiran"
+              onPress={() => navigation.navigate('Kehadiran')}
+            />
+            <Layanan
+              category="Cuti"
+              onPress={() => navigation.navigate('Cuti')}
+            />
+            <Layanan
+              category="  Resign  "
+              onPress={() => navigation.navigate('Resign')}
+            />
           </View>
         </View>
         <Gap height={40} />
