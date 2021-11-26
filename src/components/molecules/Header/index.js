@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
-import {Buttons, Gap} from '../..';
+import {Buttons, Gap} from '../../atoms';
 import {fonts} from '../../../utils';
 
 const Header = ({onPress, title}) => {

@@ -1,6 +1,5 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
-import {Gap} from '../..';
 import {fonts} from '../../../utils';
 
 const JamTgl = () => {
@@ -8,13 +7,13 @@ const JamTgl = () => {
     <View style={styles.wrapJamTgl}>
       <View style={styles.wrapJam}>
         <Text style={styles.jamTgl}>Jam</Text>
-        <Gap height={6} />
+
         <Text style={styles.Jam}>08:02</Text>
       </View>
       <View style={styles.strip} />
       <View style={styles.wrapTgl}>
         <Text style={styles.jamTgl}>Tanggal</Text>
-        <Gap height={6} />
+
         <Text style={styles.Jam}>27 Nov 2021</Text>
       </View>
     </View>
@@ -53,5 +52,6 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontFamily: fonts.primary[700],
     color: 'white',
+    marginTop: 6,
   },
 });

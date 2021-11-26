@@ -6,7 +6,7 @@ const Input = ({judul}) => {
   return (
     <View>
       <Text style={styles.Tjudul}>{judul}</Text>
-      <TextInput style={styles.TI} />
+      <TextInput style={styles.TI}> </TextInput>
       <View style={styles.garis} />
     </View>
   );

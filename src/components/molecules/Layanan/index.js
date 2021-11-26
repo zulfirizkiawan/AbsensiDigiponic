@@ -1,6 +1,5 @@
 import React from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import {Gap} from '../..';
 import {ILCuti, ILKehadiran, ILResign} from '../../../assets';
 import {colors, fonts} from '../../../utils';
 

@@ -1,8 +1,7 @@
 import React from 'react';
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
-import {Gap} from '..';
 import {ICArrowRight, ICEmail, ICKeluar, ICPusatbantuan} from '../../../assets';
-import {colors} from '../../../utils';
+import {colors, fonts} from '../../../utils';
 
 const TabAkun = ({category, onPress, categoryStrip}) => {
   const Icon = () => {
@@ -29,9 +28,8 @@ const TabAkun = ({category, onPress, categoryStrip}) => {
     <TouchableOpacity onPress={onPress}>
       <View style={styles.wrapContent}>
         <Icon />
-        <Text>{category}</Text>
-        <Gap width="55%" />
-        <ICArrowRight />
+        <Text style={styles.TxtCategory}>{category}</Text>
+        <ICArrowRight style={styles.ArrowRight} />
       </View>
       <Strip />
     </TouchableOpacity>
@@ -50,5 +48,15 @@ const styles = StyleSheet.create({
     backgroundColor: colors.border,
     height: 0.8,
     marginVertical: 10,
+  },
+  TxtCategory: {
+    width: '80%',
+    fontFamily: fonts.primary[500],
+    color: colors.text.primary,
+    fontSize: 14,
+    letterSpacing: 0.5,
+  },
+  ArrowRight: {
+    marginRight: 3,
   },
 });

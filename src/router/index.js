@@ -1,6 +1,14 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {Akun, Dashboard, JamMasuk, Login, Riwayat, Splash} from '../pages';
+import {
+  Akun,
+  Dashboard,
+  EditProfile,
+  JamMasuk,
+  Login,
+  Riwayat,
+  Splash,
+} from '../pages';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {BottomNavigator} from '../components';
 
@@ -31,7 +39,7 @@ const MainApp = () => {
 
 const Router = () => {
   return (
-    <Stack.Navigator initialRouteName="Splash">
+    <Stack.Navigator initialRouteName="MainApp">
       <Stack.Screen
         name="Splash"
         component={Splash}
@@ -45,6 +53,11 @@ const Router = () => {
       <Stack.Screen
         name="JamMasuk"
         component={JamMasuk}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="EditProfile"
+        component={EditProfile}
         options={{headerShown: false}}
       />
       <Stack.Screen
