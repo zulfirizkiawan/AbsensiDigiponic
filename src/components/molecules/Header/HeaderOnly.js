@@ -3,7 +3,7 @@ import {StyleSheet, Text, View} from 'react-native';
 import {Buttons, Gap} from '../../atoms';
 import {fonts} from '../../../utils';
 
-const Header = ({onPress, title, type}) => {
+const Header = ({onPress, title}) => {
   return (
     <View style={styles.container}>
       <Buttons type="icon-only" onPress={onPress} />
@@ -21,10 +21,6 @@ const styles = StyleSheet.create({
     paddingVertical: 24,
     backgroundColor: 'white',
     flexDirection: 'row',
-    shadowColor: '#000000',
-    shadowOffset: {width: 0, height: 0},
-    shadowRadius: 1,
-    elevation: 10,
     alignItems: 'center',
   },
   TxtHeader: {

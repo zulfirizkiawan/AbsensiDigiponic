@@ -6,6 +6,7 @@ import Pengumuman from './Pengumuman';
 import Layanan from './Layanan';
 import Penilaian from './Penilaian';
 import Artikel from './Artikel';
+import TopBarNavigator from './TopBarNavigator';
 
 export {
   Header,
@@ -16,4 +17,5 @@ export {
   Layanan,
   Penilaian,
   Artikel,
+  TopBarNavigator,
 };

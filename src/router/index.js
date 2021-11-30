@@ -1,6 +1,7 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {
+  Absensi,
   Akun,
   Cuti,
   Dashboard,
@@ -10,6 +11,7 @@ import {
   Login,
   Resign,
   Riwayat,
+  Sakit,
   Splash,
 } from '../pages';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
@@ -76,6 +78,16 @@ const Router = () => {
       <Stack.Screen
         name="Kehadiran"
         component={Kehadiran}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Absensi"
+        component={Absensi}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Sakit"
+        component={Sakit}
         options={{headerShown: false}}
       />
       <Stack.Screen

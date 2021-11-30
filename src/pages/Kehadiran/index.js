@@ -1,16 +1,20 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
-import {Header} from '../../components';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
+import {Header, TopBarNavigator} from '../../components';
 import {colors} from '../../utils';
+import HeaderOnly from '../../components/molecules/Header/HeaderOnly';
 
 const Kehadiran = ({navigation}) => {
   return (
-    <View style={styles.page}>
-      <Header title="Kehadiran" onPress={() => navigation.goBack()} />
-      <View>
-        <Text>jbjb</Text>
-      </View>
-    </View>
+    <SafeAreaProvider>
+      <HeaderOnly
+        type="header-only"
+        title="Kehadiran"
+        onPress={() => navigation.goBack()}
+      />
+      <TopBarNavigator />
+    </SafeAreaProvider>
   );
 };
 
