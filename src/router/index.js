@@ -1,12 +1,13 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {
+  AbsenMasuk,
+  AbsenPulang,
   Absensi,
   Akun,
   Cuti,
   Dashboard,
   EditProfile,
-  JamMasuk,
   Kehadiran,
   Login,
   Resign,
@@ -56,8 +57,13 @@ const Router = () => {
         options={{headerShown: false}}
       />
       <Stack.Screen
-        name="JamMasuk"
-        component={JamMasuk}
+        name="AbsenMasuk"
+        component={AbsenMasuk}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="AbsenPulang"
+        component={AbsenPulang}
         options={{headerShown: false}}
       />
       <Stack.Screen

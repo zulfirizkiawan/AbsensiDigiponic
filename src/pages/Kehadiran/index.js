@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
-import {Header, TopBarNavigator} from '../../components';
+import {TopBarNavigator} from '../../components';
 import {colors} from '../../utils';
 import HeaderOnly from '../../components/molecules/Header/HeaderOnly';
 

@@ -3,10 +3,10 @@ import {Image, StyleSheet, Text, View} from 'react-native';
 import {ICUpload} from '../../../assets';
 import {fonts} from '../../../utils';
 
-const UploadGambar = () => {
+const UploadGambar = ({title}) => {
   return (
     <View style={styles.wrapUG}>
-      <Text style={styles.label}>Foto Tempat kerja</Text>
+      <Text style={styles.label}>{title}</Text>
       <View style={styles.wrapImage}>
         <ICUpload style={styles.uplImg} />
       </View>

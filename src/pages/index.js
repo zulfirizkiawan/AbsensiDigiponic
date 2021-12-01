@@ -1,6 +1,7 @@
 import Splash from './Splash';
 import Login from './Login';
-import JamMasuk from './JamMasuk';
+import AbsenMasuk from './AbsenMasuk';
+import AbsenPulang from './AbsenPulang';
 import Akun from './Akun';
 import Dashboard from './Dashboard';
 import Riwayat from './Riwayat';
@@ -14,7 +15,8 @@ import Absensi from './Absensi';
 export {
   Splash,
   Login,
-  JamMasuk,
+  AbsenMasuk,
+  AbsenPulang,
   Akun,
   Dashboard,
   Riwayat,

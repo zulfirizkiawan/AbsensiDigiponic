@@ -9,15 +9,15 @@ import {
   UploadGambar,
 } from '../../components';
 
-const JamMasuk = ({navigation}) => {
+const AbsenMasuk = ({navigation}) => {
   return (
     <View style={styles.page}>
-      <Header onPress={() => alert('wdd')} />
+      <Header onPress={() => navigation.goBack()} title="Absen Masuk" />
       <ScrollView showsVerticalScrollIndicator={false}>
         <Gap height={20} />
         <View style={styles.content}>
           <View>
-            <UploadGambar style={styles.UG} />
+            <UploadGambar style={styles.UG} title="Foto Tempat Bekerja" />
             <Gap height={30} />
             <JamTgl />
             <Gap height={20} />
@@ -32,7 +32,7 @@ const JamMasuk = ({navigation}) => {
   );
 };
 
-export default JamMasuk;
+export default AbsenMasuk;
 
 const styles = StyleSheet.create({
   page: {
