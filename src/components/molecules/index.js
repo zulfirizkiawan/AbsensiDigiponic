@@ -8,6 +8,8 @@ import Penilaian from './Penilaian';
 import Artikel from './Artikel';
 import TopBarNavigator from './TopBarNavigator';
 import CardKehadiran from './CardKehadiran';
+import CardRiwayatResign from './CardRiwayatResign';
+import CardRiwayatCuti from './CardRiwayatCuti';
 
 export {
   Header,
@@ -20,4 +22,6 @@ export {
   Artikel,
   TopBarNavigator,
   CardKehadiran,
+  CardRiwayatResign,
+  CardRiwayatCuti,
 };

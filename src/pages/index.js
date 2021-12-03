@@ -11,6 +11,8 @@ import Cuti from './Cuti';
 import Kehadiran from './Kehadiran';
 import Sakit from './Sakit';
 import Absensi from './Absensi';
+import RiwayatResign from './RiwayatResign';
+import RiwayatCuti from './RiwayatCuti';
 
 export {
   Splash,
@@ -26,4 +28,6 @@ export {
   Kehadiran,
   Sakit,
   Absensi,
+  RiwayatResign,
+  RiwayatCuti,
 };

@@ -12,6 +12,8 @@ import {
   Login,
   Resign,
   Riwayat,
+  RiwayatCuti,
+  RiwayatResign,
   Sakit,
   Splash,
 } from '../pages';
@@ -94,6 +96,16 @@ const Router = () => {
       <Stack.Screen
         name="Sakit"
         component={Sakit}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="RiwayatResign"
+        component={RiwayatResign}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="RiwayatCuti"
+        component={RiwayatCuti}
         options={{headerShown: false}}
       />
       <Stack.Screen

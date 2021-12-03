@@ -3,7 +3,7 @@ import {StyleSheet, Text, View} from 'react-native';
 import {Layanan} from '../../components';
 import {colors, fonts} from '../../utils';
 
-const Riwayat = () => {
+const Riwayat = ({navigation}) => {
   return (
     <View style={styles.page}>
       <View style={styles.container}>
@@ -12,8 +12,14 @@ const Riwayat = () => {
       <View style={styles.wrapContentRiwayat}>
         <View style={styles.wrapRiwayat}>
           <Layanan category="Kehadiran" onPress={() => alert('Hallo')} />
-          <Layanan category="Cuti" onPress={() => alert('Hallo')} />
-          <Layanan category="  Resign  " onPress={() => alert('Hallo')} />
+          <Layanan
+            category="Cuti"
+            onPress={() => navigation.navigate('RiwayatCuti')}
+          />
+          <Layanan
+            category="  Resign  "
+            onPress={() => navigation.navigate('RiwayatResign')}
+          />
         </View>
       </View>
     </View>
