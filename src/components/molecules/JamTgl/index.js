@@ -8,7 +8,7 @@ const JamTgl = () => {
   const [currentTime, setCurrentTime] = useState('');
 
   useEffect(() => {
-    var time = moment().utcOffset('+07:00').format('hh:mm');
+    var time = moment().utcOffset('+07:00').format('HH:mm');
     var date = moment().utcOffset('+07:00').format('DD MMM YYYY');
     var year = new Date().getFullYear(); //Current Year
     setCurrentDate(date);

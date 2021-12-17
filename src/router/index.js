@@ -12,8 +12,11 @@ import {
   Login,
   Resign,
   Riwayat,
+  RiwayatAbsensi,
   RiwayatCuti,
+  RiwayatKehadiran,
   RiwayatResign,
+  RiwayatSakit,
   Sakit,
   Splash,
 } from '../pages';
@@ -37,7 +40,7 @@ const MainApp = () => {
         options={{headerShown: false}}
       />
       <Tab.Screen
-        name="  Akun   "
+        name="Informasi"
         component={Akun}
         options={{headerShown: false}}
       />
@@ -47,7 +50,7 @@ const MainApp = () => {
 
 const Router = () => {
   return (
-    <Stack.Navigator initialRouteName="MainApp">
+    <Stack.Navigator initialRouteName="Splash">
       <Stack.Screen
         name="Splash"
         component={Splash}
@@ -106,6 +109,21 @@ const Router = () => {
       <Stack.Screen
         name="RiwayatCuti"
         component={RiwayatCuti}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="RiwayatKehadiran"
+        component={RiwayatKehadiran}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="RiwayatAbsensi"
+        component={RiwayatAbsensi}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="RiwayatSakit"
+        component={RiwayatSakit}
         options={{headerShown: false}}
       />
       <Stack.Screen

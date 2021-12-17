@@ -3,8 +3,12 @@ import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {
   ICAkun,
   ICAkunAktif,
+  ICBeranda,
+  ICBerandaAktif,
   ICDashboard,
   ICDashboardAktif,
+  ICInformasi,
+  ICInformasiAktif,
   ICRiwayat,
   ICRiwayatAktif,
 } from '../../../assets';
@@ -13,13 +17,13 @@ import {colors, fonts} from '../../../utils';
 const TabItem = ({title, active, onPress, onLongPress}) => {
   const Icon = () => {
     if (title === 'Beranda') {
-      return active ? <ICDashboardAktif /> : <ICDashboard />;
+      return active ? <ICBerandaAktif /> : <ICBeranda />;
     }
     if (title === 'Riwayat') {
       return active ? <ICRiwayatAktif /> : <ICRiwayat />;
     }
-    if (title === '  Akun   ') {
-      return active ? <ICAkunAktif /> : <ICAkun />;
+    if (title === 'Informasi') {
+      return active ? <ICInformasiAktif /> : <ICInformasi />;
     }
     return <ICDashboard />;
   };
@@ -41,9 +45,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   text: active => ({
-    fontSize: 12,
+    fontSize: 13,
     color: active ? colors.text.MenuActive : colors.text.MenuinActive,
-    fontFamily: fonts.primary[600],
+    fontFamily: fonts.primary[500],
     marginTop: 3,
   }),
 });

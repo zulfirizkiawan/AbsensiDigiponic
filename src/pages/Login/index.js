@@ -1,80 +1,73 @@
 import React from 'react';
-import {
-  StatusBar,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
-import {ILLOGO, ILTangan} from '../../assets';
-import {Gap, Input} from '../../components';
-import {fonts} from '../../utils';
+import {ScrollView, StatusBar, StyleSheet, Text, View} from 'react-native';
+import {ILVectorLogin} from '../../assets';
+import {Buttons, Gap, Input} from '../../components';
+import {colors, fonts} from '../../utils';
+import LinearGradient from 'react-native-linear-gradient';
 
 const Login = ({navigation}) => {
   return (
-    <View style={styles.page}>
+    <LinearGradient
+      colors={['#FFFFFF', '#F3F7FF']}
+      style={styles.linearGradient}>
       <StatusBar barStyle="dark-content" backgroundColor="#FFF" />
-      <ILLOGO style={styles.logo} />
-      <View style={styles.WrapSelamat}>
-        <Text style={styles.TxtSelamat}>Selamat Datang</Text>
-        <ILTangan />
-      </View>
-      <Gap height={20} />
-      <Input judul="Email" />
-      <Gap height={10} />
-      <Input judul="Kata sandi" />
-      <Gap height={20} />
-      <Text style={styles.lupa}>Lupa Password?</Text>
-      <Gap height={40} />
-      <TouchableOpacity
-        style={styles.BtnLogin}
-        onPress={() => navigation.replace('MainApp')}>
-        <Text style={styles.TxtLogin}>LOGIN</Text>
-      </TouchableOpacity>
-    </View>
+      <ScrollView showsVerticalScrollIndicator={true} style={styles.Sc}>
+        <Gap height={70} />
+        <ILVectorLogin />
+        <Text style={styles.selamat}>Selamat datang,</Text>
+        <View style={styles.wrapLM}>
+          <Text style={styles.lg}>Login</Text>
+          <Text style={styles.um}> untuk melanjutkan</Text>
+        </View>
+        <View style={styles.wrapInp}>
+          <Input judul="Email" />
+          <Gap height={20} />
+          <Input judul="Kata sandi" />
+          <Gap height={35} />
+          <Buttons
+            title="Login"
+            onPress={() => navigation.replace('MainApp')}
+          />
+        </View>
+        <Gap height={20} />
+      </ScrollView>
+    </LinearGradient>
   );
 };
 
 export default Login;
 
 const styles = StyleSheet.create({
-  page: {
-    backgroundColor: 'white',
+  linearGradient: {
     flex: 1,
     paddingHorizontal: 20,
-    justifyContent: 'center',
   },
-  logo: {
-    alignSelf: 'center',
+  Sc: {
+    flex: 1,
   },
-  WrapSelamat: {
+  selamat: {
+    fontFamily: fonts.primary[600],
+    fontSize: 20,
+    color: colors.secondary,
+  },
+  lg: {
+    fontFamily: fonts.primary[600],
+    fontSize: 14,
+    color: colors.text.secondary,
+  },
+  um: {
+    fontFamily: fonts.primary[400],
+    fontSize: 14,
+    color: colors.text.secondary,
+  },
+  wrapLM: {
     flexDirection: 'row',
-    marginTop: 36,
-    alignItems: 'center',
-    justifyContent: 'center',
   },
-  TxtSelamat: {
-    fontSize: 24,
-    fontFamily: fonts.primary[700],
-    color: '#334639',
-    paddingRight: 10,
-  },
-  lupa: {
-    fontSize: 12,
-    color: '#106048',
-    textDecorationLine: 'underline',
-    fontFamily: fonts.primary[500],
-    alignSelf: 'flex-end',
-  },
-  BtnLogin: {
-    backgroundColor: '#0D9C57',
-    paddingVertical: 15,
-    borderRadius: 30,
-  },
-  TxtLogin: {
-    color: 'white',
-    fontSize: 18,
-    fontFamily: fonts.primary[800],
-    textAlign: 'center',
+  wrapInp: {
+    backgroundColor: colors.white,
+    paddingVertical: 35,
+    paddingHorizontal: 15,
+    marginTop: 20,
+    borderRadius: 25,
   },
 });

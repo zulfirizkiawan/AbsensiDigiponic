@@ -1,19 +1,18 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
+import {ProgressBar} from '@react-native-community/progress-bar-android';
 import {colors, fonts} from '../../../utils';
 
 const Penilaian = () => {
   return (
     <View style={styles.wrapPenilaian}>
-      <View>
-        <Text style={styles.TxtSub}>Kerapian</Text>
-      </View>
-      <View>
-        <Text style={styles.TxtSub}>:</Text>
-      </View>
-      <View style={styles.nilai}>
-        <Text style={styles.TxtSub}>Baik</Text>
-      </View>
+      <Text style={styles.TxtSub}>Kerapian</Text>
+
+      <ProgressBar
+        styleAttr="Horizontal"
+        indeterminate={false}
+        progress={0.5}
+      />
     </View>
   );
 };
@@ -24,8 +23,6 @@ const styles = StyleSheet.create({
   wrapPenilaian: {
     marginVertical: 5,
     borderRadius: 10,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
   },
   TxtSub: {
     fontFamily: fonts.primary[500],
@@ -35,4 +32,7 @@ const styles = StyleSheet.create({
   nilai: {
     marginRight: 20,
   },
+  // example: {
+  //   marginVertical: 24,
+  // },
 });

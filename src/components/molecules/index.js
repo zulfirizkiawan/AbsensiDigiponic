@@ -6,7 +6,6 @@ import Pengumuman from './Pengumuman';
 import Layanan from './Layanan';
 import Penilaian from './Penilaian';
 import Artikel from './Artikel';
-import TopBarNavigator from './TopBarNavigator';
 import CardKehadiran from './CardKehadiran';
 import CardRiwayatResign from './CardRiwayatResign';
 import CardRiwayatCuti from './CardRiwayatCuti';
@@ -20,7 +19,6 @@ export {
   Layanan,
   Penilaian,
   Artikel,
-  TopBarNavigator,
   CardKehadiran,
   CardRiwayatResign,
   CardRiwayatCuti,

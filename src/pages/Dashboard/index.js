@@ -7,7 +7,7 @@ import {
   Text,
   View,
 } from 'react-native';
-import {DummyProfil} from '../../assets';
+import {DummyProfil, ICSetting} from '../../assets';
 import {Artikel, Gap, Layanan, Pengumuman, Penilaian} from '../../components';
 import {colors, fonts} from '../../utils';
 
@@ -18,61 +18,59 @@ const Dashboard = ({navigation}) => {
       <ScrollView showsVerticalScrollIndicator={false}>
         <Gap height={40} />
         {/* Profile */}
-        <View style={styles.wrapProfile}>
-          <Image source={DummyProfil} style={styles.avatar} />
-          <View>
-            <Text style={styles.nama}>Lutfy Uzumaki</Text>
-            <Text style={styles.profesi}>Staff Quality</Text>
+        <View style={styles.wrapTop}>
+          <View style={styles.wrapProfile}>
+            <Image source={DummyProfil} style={styles.avatar} />
+            <View>
+              <Text style={styles.nama}>Lutfy Uzumaki</Text>
+              <Text style={styles.profesi}>Staff Quality</Text>
+            </View>
           </View>
+          <ICSetting />
         </View>
-        <Gap height={40} />
+        <Gap height={30} />
         {/* Pengumuman */}
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
           <View style={styles.wrapPengumuman}>
             <Pengumuman />
             <Pengumuman />
           </View>
-          <Gap width={10} />
+          <Gap width={20} />
         </ScrollView>
         {/* Layanan */}
-        <View style={styles.wrapContentLayanan}>
-          <Gap height={40} />
-          <Text style={styles.TxtLabel}>Layanan</Text>
-          <Gap height={20} />
+        <Gap height={30} />
+        <Text style={styles.TxtLabel}>Layanan</Text>
+        <View style={{paddingHorizontal: 20}}>
+          <Gap height={10} />
           <View style={styles.wrapLayanan}>
             <Layanan
-              category="Kehadiran"
+              category="Absensi"
               onPress={() => navigation.navigate('Kehadiran')}
             />
             <Layanan
-              category="Cuti"
+              category="  Cuti  "
               onPress={() => navigation.navigate('Cuti')}
             />
             <Layanan
-              category="  Resign  "
+              category=" Resign "
               onPress={() => navigation.navigate('Resign')}
             />
           </View>
         </View>
-        <Gap height={40} />
+        <Gap height={30} />
         {/* Penilaian */}
+        <Text style={styles.TxtLabel}>Penilaian Kinerja Anda</Text>
+        <Gap height={10} />
         <View style={styles.wrapContentLayanan}>
-          <Text style={styles.TxtLabel}>Penilaian Kinerja Anda</Text>
-          <Gap height={15} />
-          <View style={styles.wrapPenilaian}>
-            <Penilaian />
-            <Penilaian />
-            <Penilaian />
-            <Penilaian />
-            <Penilaian />
-            <Penilaian />
-          </View>
+          <Penilaian />
+          <Penilaian />
+          <Penilaian />
         </View>
-        <Gap height={40} />
+        <Gap height={30} />
         {/* Artikel */}
+        <Text style={styles.TxtLabel}>Artikel</Text>
+        <Gap height={10} />
         <View style={styles.wrapContentLayanan}>
-          <Text style={styles.TxtLabel}>Artikel</Text>
-          <Gap height={5} />
           <Artikel />
           <Artikel />
         </View>
@@ -98,7 +96,12 @@ const styles = StyleSheet.create({
   wrapProfile: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingHorizontal: 10,
+  },
+  wrapTop: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingHorizontal: 20,
+    alignItems: 'center',
   },
   nama: {
     fontFamily: fonts.primary[700],
@@ -108,18 +111,18 @@ const styles = StyleSheet.create({
   },
   profesi: {
     fontFamily: fonts.primary[500],
-    color: colors.text.primary,
-    fontSize: 12,
+    color: colors.text.tree,
+    fontSize: 13,
   },
   TxtLabel: {
     fontFamily: fonts.primary[600],
-    color: colors.text.secondary,
-    fontSize: 14,
+    color: colors.text.primary,
+    fontSize: 16,
+    paddingHorizontal: 20,
   },
   wrapLayanan: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    paddingHorizontal: 30,
   },
   wrapPengumuman: {
     flexDirection: 'row',
@@ -127,7 +130,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   wrapContentLayanan: {
-    paddingHorizontal: 10,
+    marginHorizontal: 20,
+    backgroundColor: colors.bg.secondary,
+    borderRadius: 20,
+    padding: 10,
   },
   wrapPenilaian: {
     shadowColor: '#858585',

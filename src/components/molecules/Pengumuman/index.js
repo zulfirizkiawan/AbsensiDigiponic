@@ -10,9 +10,9 @@ export default Pengumuman;
 
 const styles = StyleSheet.create({
   ImgPeng: {
-    borderRadius: 5,
-    marginLeft: 10,
+    borderRadius: 20,
+    marginLeft: 20,
     height: 170,
-    width: 380,
+    width: 320,
   },
 });

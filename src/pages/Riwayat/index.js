@@ -11,7 +11,10 @@ const Riwayat = ({navigation}) => {
       </View>
       <View style={styles.wrapContentRiwayat}>
         <View style={styles.wrapRiwayat}>
-          <Layanan category="Kehadiran" onPress={() => alert('Hallo')} />
+          <Layanan
+            category="Kehadiran"
+            onPress={() => navigation.navigate('RiwayatKehadiran')}
+          />
           <Layanan
             category="Cuti"
             onPress={() => navigation.navigate('RiwayatCuti')}
