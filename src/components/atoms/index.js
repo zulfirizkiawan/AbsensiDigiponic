@@ -4,5 +4,20 @@ import Input from './Input';
 import TabItem from './TabItem';
 import TabAkun from './TabAkun';
 import Garis from './Garis';
+import Diterima from './Diterima';
+import Ditolak from './Ditolak';
+import Menunggu from './Menunggu';
+import Sukses from './Sukses';
 
-export {Input, Buttons, Gap, TabItem, TabAkun, Garis};
+export {
+  Input,
+  Buttons,
+  Gap,
+  TabItem,
+  TabAkun,
+  Garis,
+  Sukses,
+  Menunggu,
+  Ditolak,
+  Diterima,
+};

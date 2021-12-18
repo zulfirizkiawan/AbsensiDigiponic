@@ -1,37 +1,31 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
-import {Garis, Gap} from '../../atoms';
+import {Garis, Menunggu} from '../../atoms';
 import {colors, fonts} from '../../../utils';
+import {ILTgl} from '../../../assets';
 
 const CardRiwayatCuti = () => {
   return (
     <View style={styles.Content}>
       <View style={styles.wrapStatus}>
         <Text style={styles.pengajuan}>23 Nov 2021</Text>
-        <Text>Diterima</Text>
+        <Menunggu />
       </View>
       <Garis />
       <View style={styles.wrapTgl}>
+        <ILTgl />
         <View style={styles.Masuk}>
-          <Text style={styles.TMK}>Tanggal Cuti</Text>
+          <Text style={styles.TMK}>Tgl Mulai Cuti</Text>
           <Text style={styles.TGL}>25 Nov 2018</Text>
         </View>
-        <View style={styles.Masuk}>
-          <Text style={styles.TMK}>Akhir Cuti</Text>
-          <Text style={styles.TGL}>27 Nov 2021</Text>
-        </View>
         <View>
-          <Text style={styles.TMK}>Total Cuti</Text>
-          <View style={styles.hari}>
-            <Text style={styles.TGL}>3</Text>
-            <Gap width={3} />
-            <Text style={styles.TGL}>Hari</Text>
-          </View>
+          <Text style={styles.TMK}>Tgl Akhir Cuti</Text>
+          <Text style={styles.TGL}>27 Nov 2021</Text>
         </View>
       </View>
       <View style={styles.alasan}>
-        <Text style={styles.TMK}>Keterangan Cuti</Text>
-        <Text style={styles.TGL}>Ngurus pernikahan</Text>
+        <Text style={styles.TMK}>Alasan Cuti</Text>
+        <Text style={styles.TGL}>Pindah rumah diluar kota </Text>
       </View>
     </View>
   );
@@ -45,26 +39,29 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   Content: {
-    backgroundColor: colors.white,
+    backgroundColor: colors.bg.secondary,
     paddingHorizontal: 15,
     paddingVertical: 20,
     marginTop: 10,
+    borderRadius: 15,
   },
   wrapTgl: {
     flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
   Masuk: {
-    marginRight: 30,
+    marginLeft: -50,
   },
   TMK: {
     fontFamily: fonts.primary[500],
-    color: colors.black,
+    color: colors.text.five,
     fontSize: 14,
   },
   TGL: {
     marginTop: 5,
-    fontFamily: fonts.primary[500],
-    color: colors.primary,
+    fontFamily: fonts.primary[600],
+    color: colors.text.for,
     fontSize: 14,
   },
   alasan: {
@@ -72,10 +69,7 @@ const styles = StyleSheet.create({
   },
   pengajuan: {
     fontFamily: fonts.primary[500],
-    color: colors.black,
+    color: colors.text.secondary,
     fontSize: 14,
-  },
-  hari: {
-    flexDirection: 'row',
   },
 });

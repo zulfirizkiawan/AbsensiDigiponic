@@ -6,7 +6,6 @@ import {colors} from '../../utils';
 const RiwayatResign = ({navigation}) => {
   return (
     <View style={styles.page}>
-      <Header title="Riwayat Resign" onPress={() => navigation.goBack()} />
       <ScrollView showsVerticalScrollIndicato={false}>
         <CardRiwayatResign />
         <CardRiwayatResign />
@@ -14,6 +13,7 @@ const RiwayatResign = ({navigation}) => {
         <CardRiwayatResign />
         <CardRiwayatResign />
         <CardRiwayatResign />
+        <Gap height={10} />
       </ScrollView>
     </View>
   );
@@ -24,6 +24,7 @@ export default RiwayatResign;
 const styles = StyleSheet.create({
   page: {
     flex: 1,
-    backgroundColor: '#F9FBFC',
+    backgroundColor: colors.white,
+    paddingHorizontal: 15,
   },
 });

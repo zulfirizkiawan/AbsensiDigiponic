@@ -1,20 +1,14 @@
 import React from 'react';
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {DummyProfile} from '../../assets';
-import {Gap, TabAkun} from '../../components';
+import {Gap, Header, TabAkun} from '../../components';
 import {colors, fonts} from '../../utils';
 
 const Akun = ({navigation}) => {
   return (
     <View style={styles.page}>
       <View style={styles.shadow}>
-        <View style={styles.container}>
-          <Gap width={76} />
-          <Text style={styles.TxtHeader}>Akun</Text>
-          <TouchableOpacity onPress={() => navigation.navigate('EditProfile')}>
-            <Text style={styles.TxtEdit}>Edit Profile</Text>
-          </TouchableOpacity>
-        </View>
+        <Header title="Profile" onPress={() => navigation.goBack()} />
         <View style={styles.wrapProfile}>
           <Image source={DummyProfile} style={styles.avatar} />
           <Gap height={24} />
@@ -24,6 +18,11 @@ const Akun = ({navigation}) => {
       </View>
       <Gap height={40} />
       <View style={styles.wrapAkun}>
+        <TabAkun
+          category="Edit Profile"
+          categoryStrip="Benar"
+          onPress={() => navigation.navigate('EditProfile')}
+        />
         <TabAkun
           category="Beri Masukan"
           categoryStrip="Benar"

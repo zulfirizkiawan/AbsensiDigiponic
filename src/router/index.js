@@ -8,12 +8,14 @@ import {
   Cuti,
   Dashboard,
   EditProfile,
+  Informasi,
   Kehadiran,
   Login,
   Resign,
   Riwayat,
   RiwayatAbsensi,
   RiwayatCuti,
+  RiwayatIzin,
   RiwayatKehadiran,
   RiwayatResign,
   RiwayatSakit,
@@ -41,7 +43,7 @@ const MainApp = () => {
       />
       <Tab.Screen
         name="Informasi"
-        component={Akun}
+        component={Informasi}
         options={{headerShown: false}}
       />
     </Tab.Navigator>
@@ -50,7 +52,7 @@ const MainApp = () => {
 
 const Router = () => {
   return (
-    <Stack.Navigator initialRouteName="Splash">
+    <Stack.Navigator initialRouteName="MainApp">
       <Stack.Screen
         name="Splash"
         component={Splash}
@@ -59,6 +61,11 @@ const Router = () => {
       <Stack.Screen
         name="Login"
         component={Login}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Akun"
+        component={Akun}
         options={{headerShown: false}}
       />
       <Stack.Screen
@@ -122,8 +129,8 @@ const Router = () => {
         options={{headerShown: false}}
       />
       <Stack.Screen
-        name="RiwayatSakit"
-        component={RiwayatSakit}
+        name="RiwayatIzin"
+        component={RiwayatIzin}
         options={{headerShown: false}}
       />
       <Stack.Screen

@@ -15,7 +15,8 @@ import RiwayatResign from './RiwayatResign';
 import RiwayatCuti from './RiwayatCuti';
 import RiwayatKehadiran from './RiwayatKehadiran';
 import RiwayatAbsensi from './RiwayatAbsensi';
-import RiwayatSakit from './RiwayatSakit';
+import RiwayatIzin from './RiwayatIzin';
+import Informasi from './Informasi';
 
 export {
   Splash,
@@ -35,5 +36,6 @@ export {
   RiwayatCuti,
   RiwayatKehadiran,
   RiwayatAbsensi,
-  RiwayatSakit,
+  RiwayatIzin,
+  Informasi,
 };

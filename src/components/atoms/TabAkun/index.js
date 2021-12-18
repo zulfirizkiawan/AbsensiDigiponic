@@ -1,10 +1,19 @@
 import React from 'react';
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
-import {ICArrowRight, ICEmail, ICKeluar, ICPusatbantuan} from '../../../assets';
+import {
+  ICArrowRight,
+  ICEditProfile,
+  ICEmail,
+  ICKeluar,
+  ICPusatbantuan,
+} from '../../../assets';
 import {colors, fonts} from '../../../utils';
 
 const TabAkun = ({category, onPress, categoryStrip}) => {
   const Icon = () => {
+    if (category === 'Edit Profile') {
+      return <ICEditProfile />;
+    }
     if (category === 'Beri Masukan') {
       return <ICEmail />;
     }

@@ -17,14 +17,10 @@ export default Header;
 
 const styles = StyleSheet.create({
   container: {
-    paddingHorizontal: 10,
+    paddingHorizontal: 20,
     paddingVertical: 24,
     backgroundColor: 'white',
     flexDirection: 'row',
-    shadowColor: '#000000',
-    shadowOffset: {width: 0, height: 0},
-    shadowRadius: 1,
-    elevation: 10,
     alignItems: 'center',
   },
   TxtHeader: {

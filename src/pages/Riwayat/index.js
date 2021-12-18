@@ -2,58 +2,43 @@ import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {Layanan} from '../../components';
 import {colors, fonts} from '../../utils';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
+import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
+import {RiwayatCuti, RiwayatResign, RiwayatAbsensi, RiwayatIzin} from '..';
+
+const Tab = createMaterialTopTabNavigator();
+
+const TopNav = () => {
+  return (
+    <Tab.Navigator>
+      <Tab.Screen name="Absensi" component={RiwayatAbsensi} />
+      <Tab.Screen name="Izin" component={RiwayatIzin} />
+      <Tab.Screen name="Cuti" component={RiwayatCuti} />
+      <Tab.Screen name="Resign" component={RiwayatResign} />
+    </Tab.Navigator>
+  );
+};
 
 const Riwayat = ({navigation}) => {
   return (
-    <View style={styles.page}>
+    <SafeAreaProvider>
       <View style={styles.container}>
         <Text style={styles.TxtHeader}>Riwayat</Text>
       </View>
-      <View style={styles.wrapContentRiwayat}>
-        <View style={styles.wrapRiwayat}>
-          <Layanan
-            category="Kehadiran"
-            onPress={() => navigation.navigate('RiwayatKehadiran')}
-          />
-          <Layanan
-            category="Cuti"
-            onPress={() => navigation.navigate('RiwayatCuti')}
-          />
-          <Layanan
-            category="  Resign  "
-            onPress={() => navigation.navigate('RiwayatResign')}
-          />
-        </View>
-      </View>
-    </View>
+      <TopNav />
+    </SafeAreaProvider>
   );
 };
 
 export default Riwayat;
 
 const styles = StyleSheet.create({
-  page: {
-    flex: 1,
-    backgroundColor: colors.white,
-  },
-  wrapRiwayat: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
-  wrapContentRiwayat: {
-    paddingHorizontal: 30,
-    marginTop: 40,
-  },
   container: {
     paddingHorizontal: 10,
-    paddingVertical: 20,
     backgroundColor: 'white',
     flexDirection: 'row',
-    shadowColor: '#000000',
-    shadowOffset: {width: 0, height: 0},
-    shadowRadius: 1,
-    elevation: 10,
     alignItems: 'center',
+    paddingTop: 20,
   },
   TxtHeader: {
     flex: 1,

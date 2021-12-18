@@ -1,4 +1,5 @@
 import React from 'react';
+import {TouchableOpacity} from 'react-native';
 import {
   Image,
   ScrollView,
@@ -26,7 +27,9 @@ const Dashboard = ({navigation}) => {
               <Text style={styles.profesi}>Staff Quality</Text>
             </View>
           </View>
-          <ICSetting />
+          <TouchableOpacity onPress={() => navigation.navigate('Akun')}>
+            <ICSetting />
+          </TouchableOpacity>
         </View>
         <Gap height={30} />
         {/* Pengumuman */}
