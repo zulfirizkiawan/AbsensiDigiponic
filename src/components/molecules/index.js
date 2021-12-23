@@ -9,6 +9,9 @@ import Artikel from './Artikel';
 import CardKehadiran from './CardKehadiran';
 import CardRiwayatResign from './CardRiwayatResign';
 import CardRiwayatCuti from './CardRiwayatCuti';
+import CardRiwayatIzin from './CardRiwayatIzin';
+import CardRiwayatAbsensi from './CardRiwayatAbsensi';
+import CardInformasi from './CardInformasi';
 
 export {
   Header,
@@ -22,4 +25,7 @@ export {
   CardKehadiran,
   CardRiwayatResign,
   CardRiwayatCuti,
+  CardRiwayatIzin,
+  CardRiwayatAbsensi,
+  CardInformasi,
 };

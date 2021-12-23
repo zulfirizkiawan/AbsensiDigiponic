@@ -1,19 +1,20 @@
 import React from 'react';
 import {ScrollView, StyleSheet, Text, View} from 'react-native';
-import {CardRiwayatCuti, Header} from '../../components';
+import {CardRiwayatCuti, Gap, Header} from '../../components';
 import {colors} from '../../utils';
 
 const RiwayatCuti = ({navigation}) => {
   return (
-    <View style={styles.page}>
-      <ScrollView showsVerticalScrollIndicato={false}>
+    <ScrollView showsVerticalScrollIndicato={false} style={styles.page}>
+      <View>
         <CardRiwayatCuti />
         <CardRiwayatCuti />
         <CardRiwayatCuti />
         <CardRiwayatCuti />
         <CardRiwayatCuti />
-      </ScrollView>
-    </View>
+        <Gap height={10} />
+      </View>
+    </ScrollView>
   );
 };
 

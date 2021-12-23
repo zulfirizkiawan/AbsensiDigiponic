@@ -5,8 +5,8 @@ import {colors} from '../../utils';
 
 const RiwayatResign = ({navigation}) => {
   return (
-    <View style={styles.page}>
-      <ScrollView showsVerticalScrollIndicato={false}>
+    <ScrollView showsVerticalScrollIndicato={false} style={styles.page}>
+      <View>
         <CardRiwayatResign />
         <CardRiwayatResign />
         <CardRiwayatResign />
@@ -14,8 +14,8 @@ const RiwayatResign = ({navigation}) => {
         <CardRiwayatResign />
         <CardRiwayatResign />
         <Gap height={10} />
-      </ScrollView>
-    </View>
+      </View>
+    </ScrollView>
   );
 };
 

@@ -12,6 +12,7 @@ const mainColors = {
   coklat: '#7B7B7B',
   red1: '#EA5050',
   yellow1: '#FDCD24',
+  blue1: '#0019FF',
 };
 
 export const colors = {
@@ -25,6 +26,7 @@ export const colors = {
     tree: mainColors.grey2,
     for: mainColors.blackBlue2,
     five: mainColors.coklat,
+    blueLink: mainColors.blue1,
     MenuinActive: mainColors.grey,
     MenuActive: mainColors.green1,
   },

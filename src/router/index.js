@@ -7,6 +7,7 @@ import {
   Akun,
   Cuti,
   Dashboard,
+  DetailInformasi,
   EditProfile,
   Informasi,
   Kehadiran,
@@ -131,6 +132,11 @@ const Router = () => {
       <Stack.Screen
         name="RiwayatIzin"
         component={RiwayatIzin}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="DetailInformasi"
+        component={DetailInformasi}
         options={{headerShown: false}}
       />
       <Stack.Screen

@@ -1,10 +1,14 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
-import {Layanan} from '../../components';
-import {colors, fonts} from '../../utils';
+import {fonts} from '../../utils';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
-import {RiwayatCuti, RiwayatResign, RiwayatAbsensi, RiwayatIzin} from '..';
+import {
+  RiwayatCuti,
+  RiwayatResign,
+  RiwayatAbsensi,
+  RiwayatIzin,
+} from '../../pages';
 
 const Tab = createMaterialTopTabNavigator();
 
