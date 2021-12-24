@@ -9,15 +9,14 @@ import EditProfile from './EditProfile';
 import Resign from './Resign';
 import Cuti from './Cuti';
 import Kehadiran from './Kehadiran';
-import Sakit from './Sakit';
 import Absensi from './Absensi';
 import RiwayatResign from './RiwayatResign';
 import RiwayatCuti from './RiwayatCuti';
-import RiwayatKehadiran from './RiwayatKehadiran';
 import RiwayatAbsensi from './RiwayatAbsensi';
 import RiwayatIzin from './RiwayatIzin';
 import Informasi from './Informasi';
 import DetailInformasi from './DetailInformasi';
+import Izin from './Izin';
 
 export {
   Splash,
@@ -31,13 +30,12 @@ export {
   Resign,
   Cuti,
   Kehadiran,
-  Sakit,
   Absensi,
   RiwayatResign,
   RiwayatCuti,
-  RiwayatKehadiran,
   RiwayatAbsensi,
   RiwayatIzin,
   Informasi,
   DetailInformasi,
+  Izin,
 };

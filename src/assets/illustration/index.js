@@ -8,6 +8,9 @@ import ILTgl from './ILTgl.svg';
 import ILJam from './ILJam.svg';
 import ILJamPulang from './ILJamPulang.svg';
 import ILCalendar from './ILCalendar.svg';
+import ILSisa from './ILSisa.svg';
+import ILTotal from './ILTotal.svg';
+import ILUploadPhoto from './ILUploadPhoto.svg';
 
 export {
   ILLOGO,
@@ -20,4 +23,7 @@ export {
   ILJam,
   ILJamPulang,
   ILCalendar,
+  ILSisa,
+  ILTotal,
+  ILUploadPhoto,
 };

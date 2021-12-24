@@ -8,6 +8,7 @@ import Diterima from './Diterima';
 import Ditolak from './Ditolak';
 import Menunggu from './Menunggu';
 import Sukses from './Sukses';
+import MultiText from './MultiText';
 
 export {
   Input,
@@ -20,4 +21,5 @@ export {
   Menunggu,
   Ditolak,
   Diterima,
+  MultiText,
 };

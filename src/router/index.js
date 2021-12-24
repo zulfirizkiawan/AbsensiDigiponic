@@ -10,6 +10,7 @@ import {
   DetailInformasi,
   EditProfile,
   Informasi,
+  Izin,
   Kehadiran,
   Login,
   Resign,
@@ -17,10 +18,7 @@ import {
   RiwayatAbsensi,
   RiwayatCuti,
   RiwayatIzin,
-  RiwayatKehadiran,
   RiwayatResign,
-  RiwayatSakit,
-  Sakit,
   Splash,
 } from '../pages';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
@@ -95,6 +93,11 @@ const Router = () => {
         options={{headerShown: false}}
       />
       <Stack.Screen
+        name="Izin"
+        component={Izin}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
         name="Kehadiran"
         component={Kehadiran}
         options={{headerShown: false}}
@@ -104,11 +107,7 @@ const Router = () => {
         component={Absensi}
         options={{headerShown: false}}
       />
-      <Stack.Screen
-        name="Sakit"
-        component={Sakit}
-        options={{headerShown: false}}
-      />
+
       <Stack.Screen
         name="RiwayatResign"
         component={RiwayatResign}
@@ -117,11 +116,6 @@ const Router = () => {
       <Stack.Screen
         name="RiwayatCuti"
         component={RiwayatCuti}
-        options={{headerShown: false}}
-      />
-      <Stack.Screen
-        name="RiwayatKehadiran"
-        component={RiwayatKehadiran}
         options={{headerShown: false}}
       />
       <Stack.Screen

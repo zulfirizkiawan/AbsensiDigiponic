@@ -5,7 +5,7 @@ import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs
 import {colors} from '../../utils';
 import HeaderOnly from '../../components/molecules/Header/HeaderOnly';
 import Absensi from '../Absensi';
-import Sakit from '../Sakit';
+import Izin from '../Izin';
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -13,7 +13,7 @@ const TopNav = () => {
   return (
     <Tab.Navigator>
       <Tab.Screen name="Absensi" component={Absensi} />
-      <Tab.Screen name="Sakit" component={Sakit} />
+      <Tab.Screen name="Izin" component={Izin} />
     </Tab.Navigator>
   );
 };
