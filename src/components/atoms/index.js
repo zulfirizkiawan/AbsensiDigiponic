@@ -9,6 +9,7 @@ import Ditolak from './Ditolak';
 import Menunggu from './Menunggu';
 import Sukses from './Sukses';
 import MultiText from './MultiText';
+import Dropdown from './Dropdown';
 
 export {
   Input,
@@ -22,4 +23,5 @@ export {
   Ditolak,
   Diterima,
   MultiText,
+  Dropdown,
 };

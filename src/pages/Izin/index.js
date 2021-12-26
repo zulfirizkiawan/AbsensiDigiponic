@@ -1,45 +1,59 @@
 import React from 'react';
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import {ILJam, ILTgl, ILUploadPhoto} from '../../assets';
-import {Gap, MultiText} from '../../components';
+import {Buttons, Dropdown, Gap, MultiText} from '../../components';
 import {colors, fonts} from '../../utils';
 
 const Izin = () => {
   return (
-    <View style={styles.page}>
-      <Gap height={20} />
-      <Text style={styles.txt}>Foto Surat Dokter atau Kepentingan lainnya</Text>
-      <TouchableOpacity>
-        <View style={styles.bgUpload}>
-          <ILUploadPhoto />
-        </View>
-      </TouchableOpacity>
-      <Gap height={20} />
-      <View style={styles.wrapTgl}>
-        <Gap width={2} />
-        <View style={styles.Miring}>
-          <ILTgl />
-          <Gap width={10} />
-          <View>
-            <Text style={styles.tglJam}>Tanggal</Text>
-            <Text style={styles.JamTgl}>18 Okt 2021</Text>
+    <ScrollView showsVerticalScrollIndicator={false}>
+      <View style={styles.page}>
+        <Gap height={20} />
+        <Text style={styles.txt}>
+          Foto Surat Dokter atau Kepentingan lainnya
+        </Text>
+        <TouchableOpacity>
+          <View style={styles.bgUpload}>
+            <ILUploadPhoto />
           </View>
-        </View>
-        <Gap width={10} />
-        <View style={styles.Miring}>
-          <ILJam />
-          <Gap width={10} />
-          <View>
-            <Text style={styles.tglJam}>Jam</Text>
-            <Text style={styles.JamTgl}>08:09:44</Text>
+        </TouchableOpacity>
+        <Gap height={20} />
+        <View style={styles.wrapTgl}>
+          <Gap width={2} />
+          <View style={styles.Miring}>
+            <ILTgl />
+            <Gap width={10} />
+            <View>
+              <Text style={styles.tglJam}>Tanggal</Text>
+              <Text style={styles.JamTgl}>18 Okt 2021</Text>
+            </View>
           </View>
+          <Gap width={10} />
+          <View style={styles.Miring}>
+            <ILJam />
+            <Gap width={10} />
+            <View>
+              <Text style={styles.tglJam}>Jam</Text>
+              <Text style={styles.JamTgl}>08:09:44</Text>
+            </View>
+          </View>
+          <Gap width={2} />
         </View>
-        <Gap width={2} />
+        <Gap height={20} />
+        <Dropdown />
+        <Gap height={20} />
+        <MultiText judul="Alasan Izin" />
+        <Gap height={40} />
+        <Buttons title="Kirim" onPress={() => alert('jaj')} />
+        <Gap height={40} />
       </View>
-
-      <Gap height={20} />
-      <MultiText judul="Alasan Izin" />
-    </View>
+    </ScrollView>
   );
 };
 

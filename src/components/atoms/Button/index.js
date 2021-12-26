@@ -8,7 +8,7 @@ const Button = ({type, title, onPress}) => {
     return <IconOnly onPress={onPress} />;
   }
   return (
-    <TouchableOpacity style={styles.BtnLogin} onPress={onPress}>
+    <TouchableOpacity style={styles.BtnLogin(type)} onPress={onPress}>
       <Text style={styles.TxtLogin}>{title}</Text>
     </TouchableOpacity>
   );
@@ -17,11 +17,12 @@ const Button = ({type, title, onPress}) => {
 export default Button;
 
 const styles = StyleSheet.create({
-  BtnLogin: {
-    backgroundColor: colors.primary,
+  BtnLogin: type => ({
+    backgroundColor: type === 'secondary' ? colors.bg.tree : colors.primary,
     paddingVertical: 13,
     borderRadius: 16,
-  },
+    paddingHorizontal: 23,
+  }),
   TxtLogin: {
     color: 'white',
     fontSize: 18,

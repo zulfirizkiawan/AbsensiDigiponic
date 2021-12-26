@@ -13,6 +13,7 @@ const mainColors = {
   red1: '#EA5050',
   yellow1: '#FDCD24',
   blue1: '#0019FF',
+  borderBlue: '#C6DBF8',
 };
 
 export const colors = {

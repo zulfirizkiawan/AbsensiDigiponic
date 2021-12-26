@@ -58,6 +58,7 @@ const Resign = ({navigation}) => {
           <Gap height={20} />
           <MultiText judul="Alasan Keluar" />
         </View>
+        <Gap height={40} />
         <Buttons title="Kirim" onPress={() => alert('jaj')} />
       </ScrollView>
     </View>
