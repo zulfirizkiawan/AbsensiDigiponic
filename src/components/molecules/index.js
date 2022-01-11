@@ -12,6 +12,7 @@ import CardRiwayatCuti from './CardRiwayatCuti';
 import CardRiwayatIzin from './CardRiwayatIzin';
 import CardRiwayatAbsensi from './CardRiwayatAbsensi';
 import CardInformasi from './CardInformasi';
+import CardDetailAbsen from './CardDetailAbsen';
 
 export {
   Header,
@@ -28,4 +29,5 @@ export {
   CardRiwayatIzin,
   CardRiwayatAbsensi,
   CardInformasi,
+  CardDetailAbsen,
 };

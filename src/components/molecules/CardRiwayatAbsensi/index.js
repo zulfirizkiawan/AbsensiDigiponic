@@ -1,13 +1,13 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {Garis, Menunggu, Sukses} from '../../atoms';
 import {colors, fonts} from '../../../utils';
 import {ILJam, ILJamPulang, ILTgl} from '../../../assets';
 import {Gap} from '../../atoms';
 
-const CardRiawayatAbsensi = () => {
+const CardRiawayatAbsensi = ({onPress}) => {
   return (
-    <View style={styles.Content}>
+    <TouchableOpacity style={styles.Content} onPress={onPress}>
       <View style={styles.wrapStatus}>
         <Text style={styles.pengajuan}>23 Nov 2021</Text>
         <Sukses />
@@ -26,7 +26,7 @@ const CardRiawayatAbsensi = () => {
           <Text style={styles.TGL}>16:19:24</Text>
         </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 

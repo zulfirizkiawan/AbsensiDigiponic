@@ -3,11 +3,13 @@ import {ScrollView, StyleSheet, Text, View} from 'react-native';
 import {colors} from '../../utils';
 import {CardRiwayatAbsensi, CardRiwayatCuti, Gap} from '../../components';
 
-const RiwayatAbsensi = () => {
+const RiwayatAbsensi = ({navigation}) => {
   return (
     <ScrollView showsVerticalScrollIndicato={false} style={styles.page}>
       <View>
-        <CardRiwayatAbsensi />
+        <CardRiwayatAbsensi
+          onPress={() => navigation.navigate('DetailAbsensi')}
+        />
         <CardRiwayatAbsensi />
         <CardRiwayatAbsensi />
         <CardRiwayatAbsensi />

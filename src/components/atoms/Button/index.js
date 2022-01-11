@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     backgroundColor: type === 'secondary' ? colors.bg.tree : colors.primary,
     paddingVertical: 13,
     borderRadius: 16,
-    paddingHorizontal: 23,
+    paddingHorizontal: 12,
   }),
   TxtLogin: {
     color: 'white',

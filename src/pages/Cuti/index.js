@@ -19,30 +19,10 @@ const Cuti = ({navigation}) => {
       <ScrollView
         showsVerticalScrollIndicator={false}
         style={styles.wrapContent}>
-        <View style={styles.wrapTgl}>
-          <Gap width={2} />
-          <View style={styles.Miring}>
-            <ILTgl />
-            <Gap width={10} />
-            <View>
-              <Text style={styles.tglJam}>Tanggal</Text>
-              <Text style={styles.JamTgl}>18 Okt 2021</Text>
-            </View>
-          </View>
-          <Gap width={10} />
-          <View style={styles.Miring}>
-            <ILJam />
-            <Gap width={10} />
-            <View>
-              <Text style={styles.tglJam}>Jam</Text>
-              <Text style={styles.JamTgl}>08:09:44</Text>
-            </View>
-          </View>
-          <Gap width={2} />
-        </View>
+        <JamTgl />
         <Gap height={30} />
         <View style={styles.wrapTgl}>
-          <Gap width={2} />
+          <Gap width={17} />
           <View style={styles.Miring}>
             <ILSisa />
             <Gap width={10} />
@@ -51,7 +31,7 @@ const Cuti = ({navigation}) => {
               <Text style={styles.JamTgl}>10</Text>
             </View>
           </View>
-          <Gap width={40} />
+          <Gap width={70} />
           <View style={styles.Miring}>
             <ILTotal />
             <Gap width={10} />
@@ -61,7 +41,7 @@ const Cuti = ({navigation}) => {
             </View>
             <Gap width={7} />
           </View>
-          <Gap width={2} />
+          <Gap width={10} />
         </View>
         <Gap height={30} />
         <View>

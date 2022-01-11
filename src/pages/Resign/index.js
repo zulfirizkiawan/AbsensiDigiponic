@@ -19,27 +19,7 @@ const Resign = ({navigation}) => {
       <ScrollView
         showsVerticalScrollIndicator={false}
         style={styles.wrapContent}>
-        <View style={styles.wrapTgl}>
-          <Gap width={2} />
-          <View style={styles.Miring}>
-            <ILTgl />
-            <Gap width={10} />
-            <View>
-              <Text style={styles.tglJam}>Tanggal</Text>
-              <Text style={styles.JamTgl}>18 Okt 2021</Text>
-            </View>
-          </View>
-          <Gap width={10} />
-          <View style={styles.Miring}>
-            <ILJam />
-            <Gap width={10} />
-            <View>
-              <Text style={styles.tglJam}>Jam</Text>
-              <Text style={styles.JamTgl}>08:09:44</Text>
-            </View>
-          </View>
-          <Gap width={2} />
-        </View>
+        <JamTgl />
         <Gap height={30} />
         <View>
           <View style={styles.wrapInput}>

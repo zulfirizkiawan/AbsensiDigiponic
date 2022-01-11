@@ -13,7 +13,8 @@ const Login = ({navigation}) => {
       <StatusBar barStyle="dark-content" backgroundColor="#FFF" />
       <ScrollView showsVerticalScrollIndicator={true} style={styles.Sc}>
         <Gap height={70} />
-        <ILVectorLogin />
+        <ILVectorLogin style={styles.imgVector} />
+        <Gap height={20} />
         <Text style={styles.selamat}>Selamat datang,</Text>
         <View style={styles.wrapLM}>
           <Text style={styles.lg}>Login</Text>
@@ -69,5 +70,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
     marginTop: 20,
     borderRadius: 25,
+  },
+  imgVector: {
+    alignSelf: 'center',
   },
 });
