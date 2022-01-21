@@ -4,11 +4,13 @@ import {Gap} from '../../components';
 import {CardRiwayatIzin} from '../../components/molecules';
 import {colors} from '../../utils';
 
-const RiwayatIzin = () => {
+const RiwayatIzin = ({navigation}) => {
   return (
     <ScrollView showsVerticalScrollIndicato={false} style={styles.page}>
       <View>
-        <CardRiwayatIzin />
+        <CardRiwayatIzin
+          onPress={() => navigation.navigate('DetailRiwayatIzin')}
+        />
         <CardRiwayatIzin />
         <CardRiwayatIzin />
         <CardRiwayatIzin />

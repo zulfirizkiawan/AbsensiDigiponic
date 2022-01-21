@@ -7,7 +7,9 @@ const RiwayatResign = ({navigation}) => {
   return (
     <ScrollView showsVerticalScrollIndicato={false} style={styles.page}>
       <View>
-        <CardRiwayatResign />
+        <CardRiwayatResign
+          onPress={() => navigation.navigate('DetailRiwayatResign')}
+        />
         <CardRiwayatResign />
         <CardRiwayatResign />
         <CardRiwayatResign />

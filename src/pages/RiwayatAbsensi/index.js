@@ -8,7 +8,7 @@ const RiwayatAbsensi = ({navigation}) => {
     <ScrollView showsVerticalScrollIndicato={false} style={styles.page}>
       <View>
         <CardRiwayatAbsensi
-          onPress={() => navigation.navigate('DetailAbsensi')}
+          onPress={() => navigation.navigate('DetailRiwayatAbsensi')}
         />
         <CardRiwayatAbsensi />
         <CardRiwayatAbsensi />

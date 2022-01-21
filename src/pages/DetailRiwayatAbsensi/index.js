@@ -4,7 +4,7 @@ import {ICPin, ILTgl, ILUploadPhoto} from '../../assets';
 import {CardDetailAbsen, Gap, Garis, Header, Sukses} from '../../components';
 import {colors, fonts} from '../../utils';
 
-const DetailAbsensi = ({navigation}) => {
+const DetailRiwayatAbsensi = ({navigation}) => {
   return (
     <View style={styles.Page}>
       <Header title="Detail Absensi" onPress={() => navigation.goBack('')} />
@@ -30,7 +30,7 @@ const DetailAbsensi = ({navigation}) => {
   );
 };
 
-export default DetailAbsensi;
+export default DetailRiwayatAbsensi;
 
 const styles = StyleSheet.create({
   Page: {
@@ -55,41 +55,5 @@ const styles = StyleSheet.create({
   Content: {
     paddingHorizontal: 15,
     paddingTop: 10,
-  },
-  cardPage: {
-    padding: 10,
-    backgroundColor: colors.bg.secondary,
-    borderRadius: 10,
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  bgUpload: {
-    backgroundColor: colors.white,
-    width: 100,
-    height: 140,
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius: 10,
-  },
-  TGL: {
-    fontFamily: fonts.primary[600],
-    color: colors.text.for,
-    fontSize: 14,
-    marginTop: 5,
-  },
-  TMK: {
-    fontFamily: fonts.primary[500],
-    color: colors.text.five,
-    fontSize: 14,
-  },
-  Lokasi: {
-    fontFamily: fonts.primary[500],
-    color: colors.text.for,
-    fontSize: 14,
-    marginTop: 5,
-    flex: 1,
-  },
-  wrapAbsen: {
-    flex: 1,
   },
 });

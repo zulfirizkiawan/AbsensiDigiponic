@@ -64,6 +64,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     marginTop: 5,
     flex: 1,
+    textAlign: 'justify',
   },
   wrapAbsen: {
     flex: 1,

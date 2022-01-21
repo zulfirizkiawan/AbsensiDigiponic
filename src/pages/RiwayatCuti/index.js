@@ -7,7 +7,9 @@ const RiwayatCuti = ({navigation}) => {
   return (
     <ScrollView showsVerticalScrollIndicato={false} style={styles.page}>
       <View>
-        <CardRiwayatCuti />
+        <CardRiwayatCuti
+          onPress={() => navigation.navigate('DetailRiwayatCuti')}
+        />
         <CardRiwayatCuti />
         <CardRiwayatCuti />
         <CardRiwayatCuti />

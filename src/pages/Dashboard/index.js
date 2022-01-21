@@ -23,7 +23,7 @@ const Dashboard = ({navigation}) => {
           <View style={styles.wrapProfile}>
             <Image source={DummyProfil} style={styles.avatar} />
             <View>
-              <Text style={styles.nama}>Lutfy Uzumaki</Text>
+              <Text style={styles.nama}>Lutfy Uzumakii</Text>
               <Text style={styles.profesi}>Staff Quality</Text>
             </View>
           </View>

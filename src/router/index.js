@@ -7,7 +7,7 @@ import {
   Akun,
   Cuti,
   Dashboard,
-  DetailAbsensi,
+  DetailRiwayatAbsensi,
   DetailInformasi,
   EditProfile,
   Informasi,
@@ -21,6 +21,9 @@ import {
   RiwayatIzin,
   RiwayatResign,
   Splash,
+  DetailRiwayatIzin,
+  DetailRiwayatCuti,
+  DetailRiwayatResign,
 } from '../pages';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {BottomNavigator} from '../components';
@@ -135,8 +138,23 @@ const Router = () => {
         options={{headerShown: false}}
       />
       <Stack.Screen
-        name="DetailAbsensi"
-        component={DetailAbsensi}
+        name="DetailRiwayatAbsensi"
+        component={DetailRiwayatAbsensi}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="DetailRiwayatIzin"
+        component={DetailRiwayatIzin}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="DetailRiwayatCuti"
+        component={DetailRiwayatCuti}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="DetailRiwayatResign"
+        component={DetailRiwayatResign}
         options={{headerShown: false}}
       />
       <Stack.Screen

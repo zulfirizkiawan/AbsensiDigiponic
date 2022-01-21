@@ -1,12 +1,12 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {Garis, Menunggu} from '../../atoms';
 import {colors, fonts} from '../../../utils';
 import {ILTgl} from '../../../assets';
 
-const CardRiwayatCuti = () => {
+const CardRiwayatCuti = ({onPress}) => {
   return (
-    <View style={styles.Content}>
+    <TouchableOpacity style={styles.Content} onPress={onPress}>
       <View style={styles.wrapStatus}>
         <Text style={styles.pengajuan}>23 Nov 2021</Text>
         <Menunggu />
@@ -27,7 +27,7 @@ const CardRiwayatCuti = () => {
         <Text style={styles.TMK}>Alasan Cuti</Text>
         <Text style={styles.TGL}>Pindah rumah diluar kota </Text>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
