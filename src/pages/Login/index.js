@@ -1,17 +1,47 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {ScrollView, StatusBar, StyleSheet, Text, View} from 'react-native';
 import {ILVectorLogin} from '../../assets';
 import {Buttons, Gap, Input} from '../../components';
-import {colors, fonts} from '../../utils';
+import {
+  colors,
+  fonts,
+  getData,
+  showMessage,
+  storeData,
+  useForm,
+} from '../../utils';
 import LinearGradient from 'react-native-linear-gradient';
+import axios from 'axios';
+import {useDispatch} from 'react-redux';
+import {loginAction, setLoading} from '../../redux/action';
 
 const Login = ({navigation}) => {
+  const [form, setForm] = useForm({
+    email: '',
+    password: '',
+  });
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    getData('userProfile').then(res => {
+      console.log('userProfile :', res);
+      if (res) {
+        navigation.reset({index: 0, routes: [{name: 'MainApp'}]});
+      }
+    });
+  }, []);
+
+  const onSubmit = () => {
+    dispatch(loginAction(form, navigation));
+  };
+
   return (
     <LinearGradient
       colors={['#FFFFFF', '#F3F7FF']}
       style={styles.linearGradient}>
       <StatusBar barStyle="dark-content" backgroundColor="#FFF" />
-      <ScrollView showsVerticalScrollIndicator={true} style={styles.Sc}>
+      <ScrollView showsVerticalScrollIndicator={false} style={styles.Sc}>
         <Gap height={70} />
         <ILVectorLogin style={styles.imgVector} />
         <Gap height={20} />
@@ -21,14 +51,20 @@ const Login = ({navigation}) => {
           <Text style={styles.um}> untuk melanjutkan</Text>
         </View>
         <View style={styles.wrapInp}>
-          <Input judul="Email" />
-          <Gap height={20} />
-          <Input judul="Kata sandi" />
-          <Gap height={35} />
-          <Buttons
-            title="Login"
-            onPress={() => navigation.replace('MainApp')}
+          <Input
+            judul="Email"
+            value={form.email}
+            onChangeText={value => setForm('email', value)}
           />
+          <Gap height={20} />
+          <Input
+            judul="Kata sandi"
+            value={form.password}
+            onChangeText={value => setForm('password', value)}
+            secureTextEntry
+          />
+          <Gap height={35} />
+          <Buttons title="Login" onPress={onSubmit} />
         </View>
         <Gap height={20} />
       </ScrollView>

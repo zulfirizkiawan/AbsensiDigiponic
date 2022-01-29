@@ -1,10 +1,17 @@
 import React from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {DummyProfile} from '../../assets';
 import {Gap, Header, TabAkun} from '../../components';
 import {colors, fonts} from '../../utils';
 
 const Akun = ({navigation}) => {
+  const keluarAkun = () => {
+    AsyncStorage.multiRemove(['userProfile', 'token']).then(() => {
+      navigation.reset({index: 0, routes: [{name: 'Login'}]});
+    });
+  };
+
   return (
     <View style={styles.page}>
       <View style={styles.shadow}>
@@ -33,7 +40,7 @@ const Akun = ({navigation}) => {
           categoryStrip="Benar"
           onPress={() => alert('hallo')}
         />
-        <TabAkun category="Keluar Akun   " onPress={() => alert('hallo')} />
+        <TabAkun category="Keluar Akun   " onPress={keluarAkun} />
       </View>
     </View>
   );

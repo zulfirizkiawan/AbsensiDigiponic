@@ -47,19 +47,19 @@ const Cuti = ({navigation}) => {
         <View>
           <View style={styles.wrapInput}>
             <View style={styles.wrapTxt}>
-              <Input judul="Tanggal Masuk Kerja" />
+              <Input judul="Tanggal Cuti" />
             </View>
             <ILCalendar style={styles.vectorCalen} />
           </View>
           <Gap height={20} />
           <View style={styles.wrapInput}>
             <View style={styles.wrapTxt}>
-              <Input judul="Tanggal Keluar Kerja" />
+              <Input judul="Tanggal Akhir Cuti" />
             </View>
             <ILCalendar style={styles.vectorCalen} />
           </View>
           <Gap height={20} />
-          <MultiText judul="Alasan Keluar" />
+          <MultiText judul="Alasan Cuti" />
         </View>
         <Gap height={40} />
         <Buttons title="Kirim" onPress={() => alert('jaj')} />

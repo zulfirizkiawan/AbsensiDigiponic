@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {TouchableOpacity} from 'react-native';
 import {
   Image,
@@ -10,9 +10,18 @@ import {
 } from 'react-native';
 import {DummyProfil, ICSetting} from '../../assets';
 import {Artikel, Gap, Layanan, Pengumuman, Penilaian} from '../../components';
-import {colors, fonts} from '../../utils';
+import {colors, fonts, getData} from '../../utils';
 
 const Dashboard = ({navigation}) => {
+  const [photo, setPhoto] = useState(DummyProfil);
+  const [nama, setNama] = useState('');
+  useEffect(() => {
+    getData('userProfile').then(res => {
+      console.log('userProfile :', res);
+      setPhoto({Uri: res.image});
+      setNama(res.nama);
+    });
+  }, []);
   return (
     <View style={styles.page}>
       <StatusBar barStyle="dark-content" backgroundColor="#FFF" />
@@ -21,9 +30,9 @@ const Dashboard = ({navigation}) => {
         {/* Profile */}
         <View style={styles.wrapTop}>
           <View style={styles.wrapProfile}>
-            <Image source={DummyProfil} style={styles.avatar} />
+            <Image source={photo} style={styles.avatar} />
             <View>
-              <Text style={styles.nama}>Lutfy Uzumakii</Text>
+              <Text style={styles.nama}>{nama}</Text>
               <Text style={styles.profesi}>Staff Quality</Text>
             </View>
           </View>
