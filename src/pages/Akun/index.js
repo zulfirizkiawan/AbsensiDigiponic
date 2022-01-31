@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {DummyProfile} from '../../assets';
 import {Gap, Header, TabAkun} from '../../components';
-import {colors, fonts} from '../../utils';
+import {colors, fonts, getData} from '../../utils';
 
 const Akun = ({navigation}) => {
   const keluarAkun = () => {
@@ -12,6 +12,14 @@ const Akun = ({navigation}) => {
     });
   };
 
+  const [userProfile, setUserProfile] = useState('');
+  useEffect(() => {
+    getData('userProfile').then(res => {
+      setUserProfile(res);
+      console.log('userProfile :', res);
+    });
+  }, []);
+
   return (
     <View style={styles.page}>
       <View style={styles.shadow}>
@@ -19,8 +27,8 @@ const Akun = ({navigation}) => {
         <View style={styles.wrapProfile}>
           <Image source={DummyProfile} style={styles.avatar} />
           <Gap height={24} />
-          <Text style={styles.nama}>Lutfy Uzumaki</Text>
-          <Text style={styles.email}>Lutfy.Uzumaki.02@gmail.com</Text>
+          <Text style={styles.nama}>{userProfile.nama}</Text>
+          <Text style={styles.email}>{userProfile.email}</Text>
         </View>
       </View>
       <Gap height={40} />
@@ -29,11 +37,6 @@ const Akun = ({navigation}) => {
           category="Edit Profile"
           categoryStrip="Benar"
           onPress={() => navigation.navigate('EditProfile')}
-        />
-        <TabAkun
-          category="Beri Masukan"
-          categoryStrip="Benar"
-          onPress={() => alert('hallo')}
         />
         <TabAkun
           category="Pusat Bantuan"
@@ -100,7 +103,7 @@ const styles = StyleSheet.create({
   },
   email: {
     fontFamily: fonts.primary[500],
-    fontSize: 12,
+    fontSize: 14,
     color: colors.text.primary,
     marginTop: 5,
   },

@@ -6,6 +6,7 @@ export const loginAction = (form, navigation) => dispatch => {
   dispatch(setLoading(true));
   Axios.post(`http://hrm.digiponic.co.id/api/authentications/login`, form)
     .then(res => {
+      // console.log('sukses', res.data.data);
       const profile = res.data.data;
       const token = `${res.data.data.email}`;
       dispatch(setLoading(false));

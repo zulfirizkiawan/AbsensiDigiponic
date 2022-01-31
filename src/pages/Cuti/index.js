@@ -1,18 +1,47 @@
-import React from 'react';
-import {ScrollView, StyleSheet, Text, View} from 'react-native';
-import {ILCalendar, ILJam, ILSisa, ILTgl, ILTotal} from '../../assets';
+import React, {useState} from 'react';
 import {
-  Buttons,
-  Gap,
-  Header,
-  Input,
-  InputDate,
-  JamTgl,
-  MultiText,
-} from '../../components';
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
+import {ILCalendar, ILSisa, ILTotal} from '../../assets';
+import {Buttons, Gap, Header, Input, JamTgl, MultiText} from '../../components';
 import {colors, fonts} from '../../utils';
+import DateTimePicker from '@react-native-community/datetimepicker';
 
 const Cuti = ({navigation}) => {
+  const [date, setDate] = useState(new Date());
+  const [mode, setMode] = useState('date');
+  const [show, setShow] = useState(false);
+  const [text, setText] = useState('');
+
+  const onChange = (event, selectedDate) => {
+    const currentDate = selectedDate || date;
+    setShow(Platform.OS === 'ios');
+    setDate(currentDate);
+
+    let tempDate = new Date(currentDate);
+    let fDate =
+      tempDate.getDate() +
+      '/' +
+      (tempDate.getMonth() + 1) +
+      '/' +
+      tempDate.getUTCFullYear();
+
+    setText(fDate);
+  };
+
+  const showMode = currentMode => {
+    setShow(true);
+    setMode(currentMode);
+  };
+
+  const showDatepicker = () => {
+    showMode('date');
+  };
+
   return (
     <View style={styles.page}>
       <Header title="Cuti" onPress={() => navigation.goBack()} />
@@ -47,14 +76,30 @@ const Cuti = ({navigation}) => {
         <View>
           <View style={styles.wrapInput}>
             <View style={styles.wrapTxt}>
-              <Input judul="Tanggal Cuti" />
+              <TouchableOpacity onPress={showDatepicker}>
+                <Input judul="Tanggal Cuti" disable>
+                  {text}
+                </Input>
+              </TouchableOpacity>
+              {show && (
+                <DateTimePicker
+                  testID="dateTimePicker"
+                  value={date}
+                  mode={mode}
+                  is24Hour={true}
+                  display="default"
+                  onChange={onChange}
+                />
+              )}
             </View>
             <ILCalendar style={styles.vectorCalen} />
           </View>
           <Gap height={20} />
           <View style={styles.wrapInput}>
             <View style={styles.wrapTxt}>
-              <Input judul="Tanggal Akhir Cuti" />
+              <TouchableOpacity>
+                <Input judul="Tanggal Akhir Cuti" disable />
+              </TouchableOpacity>
             </View>
             <ILCalendar style={styles.vectorCalen} />
           </View>

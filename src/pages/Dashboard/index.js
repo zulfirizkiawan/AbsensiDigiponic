@@ -15,11 +15,13 @@ import {colors, fonts, getData} from '../../utils';
 const Dashboard = ({navigation}) => {
   const [photo, setPhoto] = useState(DummyProfil);
   const [nama, setNama] = useState('');
+  const [posisi, setPosisi] = useState('');
   useEffect(() => {
     getData('userProfile').then(res => {
       console.log('userProfile :', res);
       setPhoto({Uri: res.image});
       setNama(res.nama);
+      setPosisi(res.nama_posisi);
     });
   }, []);
   return (
@@ -33,7 +35,7 @@ const Dashboard = ({navigation}) => {
             <Image source={photo} style={styles.avatar} />
             <View>
               <Text style={styles.nama}>{nama}</Text>
-              <Text style={styles.profesi}>Staff Quality</Text>
+              <Text style={styles.profesi}>{posisi}</Text>
             </View>
           </View>
           <TouchableOpacity onPress={() => navigation.navigate('Akun')}>

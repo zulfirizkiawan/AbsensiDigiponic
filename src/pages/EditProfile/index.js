@@ -1,10 +1,18 @@
-import React from 'react';
-import {Image, ScrollView, StyleSheet, Text, View} from 'react-native';
-import {DummyProfile, ICNullPhoto, ICUploadImg} from '../../assets';
+import React, {useEffect, useState} from 'react';
+import {ScrollView, StyleSheet, Text, View} from 'react-native';
+import {ICNullPhoto, ICUploadImg} from '../../assets';
 import {Buttons, Gap, Header, Input} from '../../components';
-import {colors} from '../../utils';
+import {colors, getData} from '../../utils';
 
 const EditProfile = ({navigation}) => {
+  const [userProfile, setUserProfile] = useState('');
+  useEffect(() => {
+    getData('userProfile').then(res => {
+      setUserProfile(res);
+      console.log('userProfile :', res);
+    });
+  }, []);
+
   return (
     <View style={styles.page}>
       <Header title="Edit Profile" onPress={() => navigation.goBack()} />
@@ -12,31 +20,56 @@ const EditProfile = ({navigation}) => {
         <View style={styles.wrapContent}>
           <View style={styles.WrapProf}>
             <View style={styles.wrapAvatar}>
-              <ICNullPhoto width={110} height={110} />
+              <ICNullPhoto
+                width={110}
+                height={110}
+                source={{uri: userProfile.image}}
+              />
+
               <ICUploadImg style={styles.addPhoto} />
             </View>
           </View>
           <Gap height={30} />
           <View>
-            <Input judul="Nama Lengkap" />
+            <Input judul="Nama Lengkap" disable>
+              {userProfile.nama}
+            </Input>
             <Gap height={15} />
-            <Input judul="Alamat" />
+            <Input judul="Alamat">{userProfile.alamat_lengkap}</Input>
             <Gap height={15} />
-            <Input judul="Tanggal Lahir" />
+            <Input judul="Tanggal Lahir" disable>
+              {userProfile.tgl_lahir}
+            </Input>
             <Gap height={15} />
-            <Input judul="No. Telepon" />
+            <Input judul="No. Telepon" keyboardType="numeric">
+              {userProfile.no_telp}
+            </Input>
             <Gap height={15} />
-            <Input judul="Departemen" />
+            <Input judul="Departemen" disable>
+              {userProfile.nama_departmen}
+            </Input>
             <Gap height={15} />
-            <Input judul="Divisi" />
+            <Input judul="Divisi" disable>
+              {userProfile.nama_divisi}
+            </Input>
+            <Gap height={15} disable />
+            <Input judul="Jabatan" disable>
+              {userProfile.nama_jabatan}
+            </Input>
+            <Gap height={15} disable />
+            <Input judul="Penempatan" disable>
+              {userProfile.nama_penempatan}
+            </Input>
+            <Gap height={15} disable />
+            <Input judul="Posisi" disable>
+              {userProfile.nama_posisi}
+            </Input>
+            <Gap height={15} disable />
+            <Input judul="Email" disable>
+              {userProfile.email}
+            </Input>
             <Gap height={15} />
-            <Input judul="Jabatan" />
-            <Gap height={15} />
-            <Input judul="Posisi" />
-            <Gap height={15} />
-            <Input judul="Email" />
-            <Gap height={15} />
-            <Input judul="Password" />
+            <Input judul="Password" secureTextEntry />
             <Gap height={30} />
             <Buttons title="Simpan" />
             <Gap height={50} />

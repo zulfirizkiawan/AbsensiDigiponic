@@ -2,18 +2,10 @@ import React, {useEffect} from 'react';
 import {ScrollView, StatusBar, StyleSheet, Text, View} from 'react-native';
 import {ILVectorLogin} from '../../assets';
 import {Buttons, Gap, Input} from '../../components';
-import {
-  colors,
-  fonts,
-  getData,
-  showMessage,
-  storeData,
-  useForm,
-} from '../../utils';
+import {colors, fonts, getData, useForm} from '../../utils';
 import LinearGradient from 'react-native-linear-gradient';
-import axios from 'axios';
 import {useDispatch} from 'react-redux';
-import {loginAction, setLoading} from '../../redux/action';
+import {loginAction} from '../../redux/action';
 
 const Login = ({navigation}) => {
   const [form, setForm] = useForm({
