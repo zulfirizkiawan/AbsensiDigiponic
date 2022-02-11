@@ -6,7 +6,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import {ILJam, ILTgl, ILUploadPhoto} from '../../assets';
+import {ILUploadPhoto} from '../../assets';
 import {Buttons, Dropdown, Gap, JamTgl, MultiText} from '../../components';
 import {colors, fonts} from '../../utils';
 

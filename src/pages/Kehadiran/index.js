@@ -6,13 +6,14 @@ import {colors} from '../../utils';
 import HeaderOnly from '../../components/molecules/Header/HeaderOnly';
 import Absensi from '../Absensi';
 import Izin from '../Izin';
+import AbsensiNew from '../AbsensiNew';
 
 const Tab = createMaterialTopTabNavigator();
 
 const TopNav = () => {
   return (
     <Tab.Navigator>
-      <Tab.Screen name="Absensi" component={Absensi} />
+      <Tab.Screen name="AbsensiNew" component={AbsensiNew} />
       <Tab.Screen name="Izin" component={Izin} />
     </Tab.Navigator>
   );

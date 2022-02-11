@@ -1,11 +1,63 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {ScrollView, StyleSheet, Text, View} from 'react-native';
 import {ICPin} from '../../assets';
-import {Buttons, CardKehadiran, Gap, Garis, JamTgl} from '../../components';
-import {colors, fonts} from '../../utils';
+import {Buttons, Gap, Garis} from '../../components';
+import {
+  colors,
+  fonts,
+  getData,
+  showMessage,
+  storeData,
+  useForm,
+} from '../../utils';
 import MapView, {Marker} from 'react-native-maps';
+import moment from 'moment';
+import Axios from 'axios';
+import {setLoading} from '../../redux/action';
+import {useDispatch} from 'react-redux';
+import Geolocation from 'react-native-geolocation-service';
 
 const Absensi = ({navigation}) => {
+  //ambil data jam dan tanggal
+  const [tanggal, setCurrentDate] = useState('');
+  const [jam_masuk, setCurrentTime] = useState('');
+
+  useEffect(() => {
+    var time = moment().utcOffset('+07:00').format('HH:mm:ss');
+    var date = moment().utcOffset('+07:00').format('DD MMM YYYY');
+    var year = new Date().getFullYear(); //Current Year
+    setCurrentDate(date);
+    setCurrentTime(time);
+  }, []);
+
+  //post data absen
+  const dispatch = useDispatch();
+
+  const onSubmit = () => {
+    const data = {
+      tanggal,
+      jam_masuk,
+    };
+    console.log('data send :', data);
+    dispatch(setLoading(true));
+    Axios.post(`http://hrm.digiponic.co.id/api/karyawan/CheckIn`, data)
+      .then(res => {
+        console.log('res :', res);
+
+        const token = `${res.user_id}`;
+        dispatch(setLoading(false));
+        storeData('token', token);
+        showMessage('Berhasil absensi', 'success');
+        navigation.reset({index: 0, routes: [{name: 'RiwayatAbsensi'}]});
+      })
+      .catch(err => {
+        dispatch(setLoading(false));
+        showMessage('ada kesalahan dalam sistem');
+      });
+  };
+
+  //ambil lokasi
+
   return (
     <ScrollView>
       <View style={styles.page}>
@@ -28,9 +80,9 @@ const Absensi = ({navigation}) => {
           </MapView>
           <Gap height={10} />
           <View style={styles.contentLokasi}>
-            <View style={styles.wrapLokasi}>
-              <Text style={styles.txtTgl}>18 Okt 2021</Text>
-              <Text style={styles.txtjam}>08:01:31</Text>
+            <View style={styles.wrapLokasis}>
+              <Text style={styles.txtTgl}>{tanggal}</Text>
+              <Text style={styles.txtjam}>{jam_masuk}</Text>
             </View>
             <Gap height={15} />
             <View style={styles.wrapLokasi}>
@@ -44,9 +96,13 @@ const Absensi = ({navigation}) => {
             <Garis />
             <Gap height={10} />
             <View style={styles.wrapBtn}>
-              <Buttons title="Absen Masuk" />
+              <Buttons title="Absen Masuk" onPress={onSubmit} />
               <Gap width={10} />
-              <Buttons title="Absen Pulang" type="secondary" />
+              <Buttons
+                title="Absen Pulang"
+                type="secondary"
+                onPress={() => navigation.navigate('AbsensiNew')}
+              />
             </View>
           </View>
         </View>
@@ -70,6 +126,9 @@ const styles = StyleSheet.create({
   },
   wrapLokasi: {
     flexDirection: 'row',
+  },
+  wrapLokasis: {
+    flexDirection: 'row',
     justifyContent: 'space-between',
   },
   wrapAbsensiLokasi: {
@@ -81,7 +140,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontFamily: fonts.primary[400],
     color: colors.text.secondary,
-    paddingHorizontal: 10,
+    paddingLeft: 10,
   },
   txtTgl: {
     fontSize: 14,

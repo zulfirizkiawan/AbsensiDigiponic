@@ -15,6 +15,7 @@ import ICEditProfile from './ICEditProfile.svg';
 import ICUploadImg from './ICUploadImg.svg';
 import ICNullPhoto from './ICNullPhoto.svg';
 import ICPin from './ICPin.svg';
+import ICPins from './ICPins.png';
 
 export {
   ICBack,
@@ -34,4 +35,5 @@ export {
   ICUploadImg,
   ICNullPhoto,
   ICPin,
+  ICPins,
 };

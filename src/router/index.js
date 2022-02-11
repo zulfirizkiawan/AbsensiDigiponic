@@ -24,6 +24,8 @@ import {
   DetailRiwayatIzin,
   DetailRiwayatCuti,
   DetailRiwayatResign,
+  Maps,
+  AbsensiNew,
 } from '../pages';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {BottomNavigator} from '../components';
@@ -155,6 +157,16 @@ const Router = () => {
       <Stack.Screen
         name="DetailRiwayatResign"
         component={DetailRiwayatResign}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Maps"
+        component={Maps}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="AbsensiNew"
+        component={AbsensiNew}
         options={{headerShown: false}}
       />
       <Stack.Screen

@@ -21,6 +21,8 @@ import DetailRiwayatAbsensi from './DetailRiwayatAbsensi';
 import DetailRiwayatCuti from './DetailRiwayatCuti';
 import DetailRiwayatIzin from './DetailRiwayatIzin';
 import DetailRiwayatResign from './DetailRiwayatResign';
+import Maps from './Maps';
+import AbsensiNew from './AbsensiNew';
 
 export {
   Splash,
@@ -46,4 +48,6 @@ export {
   DetailRiwayatCuti,
   DetailRiwayatIzin,
   DetailRiwayatResign,
+  Maps,
+  AbsensiNew,
 };
