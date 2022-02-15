@@ -79,10 +79,6 @@ export default class AbsensiNew extends Component {
           </MapView>
           <Gap height={10} />
           <View style={styles.contentLokasi}>
-            <View style={styles.wrapLokasis}>
-              <Text style={styles.txtTgl}>wdwd</Text>
-              <Text style={styles.txtjam}>adad</Text>
-            </View>
             <Gap height={15} />
             <View style={styles.wrapLokasi}>
               <ICPin />
