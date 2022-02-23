@@ -4,7 +4,7 @@ import {Garis, Menunggu} from '../../atoms';
 import {colors, fonts} from '../../../utils';
 import {ILTgl} from '../../../assets';
 
-const CardRiwayatCuti = ({onPress}) => {
+const CardRiwayatCuti = ({onPress, tglMulaiCuti, tglAkhirCuti, alasanCuti}) => {
   return (
     <TouchableOpacity style={styles.Content} onPress={onPress}>
       <View style={styles.wrapStatus}>
@@ -16,16 +16,16 @@ const CardRiwayatCuti = ({onPress}) => {
         <ILTgl />
         <View style={styles.Masuk}>
           <Text style={styles.TMK}>Tgl Mulai Cuti</Text>
-          <Text style={styles.TGL}>25 Nov 2018</Text>
+          <Text style={styles.TGL}>{tglMulaiCuti}</Text>
         </View>
         <View>
           <Text style={styles.TMK}>Tgl Akhir Cuti</Text>
-          <Text style={styles.TGL}>27 Nov 2021</Text>
+          <Text style={styles.TGL}>{tglAkhirCuti}</Text>
         </View>
       </View>
       <View style={styles.alasan}>
         <Text style={styles.TMK}>Alasan Cuti</Text>
-        <Text style={styles.TGL}>Pindah rumah diluar kota </Text>
+        <Text style={styles.TGL}>{alasanCuti}</Text>
       </View>
     </TouchableOpacity>
   );

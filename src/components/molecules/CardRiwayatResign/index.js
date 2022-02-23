@@ -4,28 +4,29 @@ import {Garis, Ditolak} from '../../atoms';
 import {colors, fonts} from '../../../utils';
 import {ILTgl} from '../../../assets';
 
-const CardRiwayatResign = ({onPress}) => {
+const CardRiwayatResign = ({
+  onPress,
+  tglKeluarKerja,
+  alasanKeluar,
+  tglPengajuan,
+}) => {
   return (
     <TouchableOpacity style={styles.Content} onPress={onPress}>
       <View style={styles.wrapStatus}>
-        <Text style={styles.pengajuan}>23 Nov 2021</Text>
+        <Text style={styles.pengajuan}>{tglPengajuan}</Text>
         <Ditolak />
       </View>
       <Garis />
       <View style={styles.wrapTgl}>
-        <ILTgl />
+        {/* <ILTgl /> */}
         <View style={styles.Masuk}>
-          <Text style={styles.TMK}>Tgl Masuk Kerja</Text>
-          <Text style={styles.TGL}>25 Nov 2018</Text>
-        </View>
-        <View>
           <Text style={styles.TMK}>Tgl keluar Kerja</Text>
-          <Text style={styles.TGL}>27 Nov 2021</Text>
+          <Text style={styles.TGL}>{tglKeluarKerja}</Text>
         </View>
       </View>
       <View style={styles.alasan}>
         <Text style={styles.TMK}>Alasan keluar</Text>
-        <Text style={styles.TGL}>Pindah rumah diluar kota </Text>
+        <Text style={styles.TGL}>{alasanKeluar}</Text>
       </View>
     </TouchableOpacity>
   );
@@ -47,11 +48,11 @@ const styles = StyleSheet.create({
   },
   wrapTgl: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    // justifyContent: 'space-between',
     alignItems: 'center',
   },
   Masuk: {
-    marginLeft: -30,
+    // marginLeft: 20,
   },
   TMK: {
     fontFamily: fonts.primary[500],

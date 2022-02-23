@@ -10,7 +10,7 @@ export const loginAction = (form, navigation) => dispatch => {
       const profile = res.data.data;
       const token = `${res.data.data.idusers}`;
       dispatch(setLoading(false));
-      storeData('token', token);
+      storeData('token', {value: token});
       storeData('userProfile', profile);
       showMessage('Berhasil login', 'success');
       navigation.reset({index: 0, routes: [{name: 'MainApp'}]});

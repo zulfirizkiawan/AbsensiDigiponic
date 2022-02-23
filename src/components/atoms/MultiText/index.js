@@ -2,11 +2,11 @@ import React from 'react';
 import {StyleSheet, Text, TextInput, View} from 'react-native';
 import {colors, fonts} from '../../../utils';
 
-const MultiText = ({judul}) => {
+const MultiText = ({judul, ...restProps}) => {
   return (
     <View>
       <Text style={styles.Tjudul}>{judul}</Text>
-      <TextInput style={styles.TI} multiline={true}></TextInput>
+      <TextInput style={styles.TI} multiline={true} {...restProps} />
     </View>
   );
 };
